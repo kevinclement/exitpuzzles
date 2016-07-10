@@ -61,8 +61,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 intro-content">
+                        
                         <div class="logo">
-                            <h1>E</h1>
+                            <img src="assets/img/logo.jpg" style="height:130px">                            
                         </div>
                         <!-- //.logo -->
                         
@@ -74,7 +75,11 @@
                         <!-- //.intro-text -->
 
                         <div class="page-scroll">
-                            <a href="#coming-soon" class="btn btn-lg btn-rj">Learn More</a>
+                            <a href="#" onclick="alert('booked')" class="btn btn-lg btn-rj" style="margin-right:5px">Book Now</a>
+                            <a href="#who-we-are" class="btn btn-lg btn-rj" >Learn More</a>                            
+                        </div>
+                        <div class="page-scroll">
+                            
                         </div>
                         <!-- //.page-scroll -->
                     </div>
@@ -107,8 +112,23 @@
             <div class="navbar-collapse collapse navbar-rj-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="page-scroll">
-                        <a href="#coming-soon">Soon</a>
-                    </li>                    
+                        <a href="#" style="color:#F89D29">Book</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#who-we-are">About</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#our-latest-work">Photos</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#testimonials">Reviews</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#faq">FAQ</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#footer">Contact</a>
+                    </li>
                 </ul>
             </div>
             <!-- //.navbar-collapse -->
@@ -117,18 +137,80 @@
     </nav>
     <!-- //End Navbar -->    
 
-    <!-- Begin Coming Soon Section -->
-    <section id="coming-soon" class="section section-bgimage-yes">
+    <!-- Begin Who We Are Section -->
+    <section id="who-we-are" class="section">
         <div class="section-inner">
-            <div class="section-overlay"></div>
-
             <div class="container section-content">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-title text-center">
-                            <h3 class="main-title">Coming Soon</h3>
+                            <h2 class="main-title">Who We Are?</h2>
 
-                            <h3 class="sub-title">We're Making Something Interesting and Awesome</h3>
+                            <h3 class="sub-title">Some Things You Should Know About Us</h3>
+
+                            <span class="section-line"></span>
+                        </div>
+                        <!-- //.section-title -->
+                    </div>
+                    <!-- //.col-md-12 -->
+                </div>
+                <!-- //.row -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="carousel-who-we-are" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="assets/img/who-we-are-image-1.jpg" alt="" class="img-responsive img-rounded"/>
+                            </div>
+                            <!-- //.item -->
+
+                            <div class="item">
+                                <img src="assets/img/who-we-are-image-2.jpg" alt="" class="img-responsive img-rounded"/>
+                            </div>
+                            <!-- //.item -->
+
+                            <div class="item">
+                                <img src="assets/img/who-we-are-image-3.jpg" alt="" class="img-responsive img-rounded"/>
+                            </div>
+                            <!-- //.item -->
+                        </div>
+                        <!-- //.owl-carousel -->
+                    </div>
+                    <!-- //.col-md-6 -->
+
+                    <div class="col-md-6">
+                        <div class="who-we-are-text">
+                            <h4>A Little About Our Past</h4>
+
+                            <p>Gunung Rinjani adalah gunung yang berlokasi di Pulau Lombok, Nusa Tenggara Barat. Gunung ini merupakan gunung favorit bagi pendaki Indonesia karena keindahan pemandangannya. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha dan ini akan diusulkan penambahannya sehingga menjadi 76.000 ha ke arah barat dan timur. Secara administratif gunung ini berada dalam wilayah tiga kabupaten: Lombok Timur, Lombok Tengah dan Lombok Barat. Gunung Rinjani dengan titik tertinggi 3.726 m dpl, mendominasi sebagian besar pemandangan Pulau Lombok bagian utara. Di sebelah barat kerucut Rinjani terdapat kaldera dengan luas sekitar 3.500 m x 4.800 m, memanjang kearah timur dan barat.</p>
+
+                            <div class="page-scroll">
+                                <a href="#" class="btn btn-lg btn-rj">Book Now</a>
+                            </div>
+                            <!-- //.page-scroll -->
+                        </div>
+                        <!-- //.who-we-are-text -->
+                    </div>
+                    <!-- //.col-md-6 -->
+                </div>
+                <!-- //.row -->
+            </div>
+            <!-- //.section-content -->
+        </div>
+        <!-- //.section-inner -->
+    </section>
+    <!-- //End Who We Are Section -->
+
+    <!-- Begin Our Latest Work Section -->
+    <section id="our-latest-work" class="section">
+        <div class="section-inner">
+            <div class="container section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h2 class="main-title">Photos</h2>
+
+                            <h3 class="sub-title">Past teams that conquered the room (and some that didn't)</h3>
 
                             <span class="section-line"></span>
                         </div>
@@ -140,43 +222,217 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="countdown text-center">
-                            <div class="cd-content" data-year="2016" data-month="5" data-day="1"></div>
+                        <div class="popup-portfolio">
+                            <div class="portfolio-item grow illustration logo">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-1.jpg" title="Project Title 1 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 1</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-1.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow identity">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-2.jpg" title="Project Title 2 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 2</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-2.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow logo identity">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-3.jpg" title="Project Title 3 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 3</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-3.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow logo">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-4.jpg" title="Project Title 4 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 4</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-4.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow logo illustration">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-5.jpg" title="Project Title 5 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 5</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-5.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow identity">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-6.jpg" title="Project Title 6 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 6</h4>
+
+                                                    <p>Lorem Ipsum</p>
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-6.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow logo">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-7.jpg" title="Project Title 7 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 7</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-7.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow illustration">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-8.jpg" title="Project Title 8 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 8</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-8.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
+
+                            <div class="portfolio-item grow illustration">
+                                <div class="inner-content">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-detail">
+                                            <a href="assets/img/portfolio/portfolio-image-9.jpg" title="Project Title 9 - Lorem Ipsum">
+                                                <div class="portfolio-text">
+                                                    <h4>Project Title 9</h4>
+
+                                                    <p>Lorem Ipsum</p>   
+                                                </div>
+                                                <!-- //.portfolio-text -->
+                                            </a>
+                                        </div>
+                                        <!-- //.portfolio-detail -->
+                                    </div>
+                                    <!-- //.portfolio-content -->
+
+                                    <img src="assets/img/portfolio/portfolio-image-9.jpg" alt="" class="img-responsive"/>
+                                </div>
+                                <!-- //.inner-content -->
+                            </div>
+                            <!-- //.portfolio-item -->
                         </div>
-                        <!-- /.countdown -->
+                        <!-- //.popup-portfolio -->
                     </div>
                     <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <div class="countdown-form">
-                            <form role="form">
-                                <div class="input-group">
-                                    <input type="text" class="form-control input-lg" placeholder="me@there.com">
-
-                                    <span class="input-group-btn">
-                                        <button type="submit" class="btn btn-lg btn-rj">Notify Me</button>
-                                    </span>
-                                </div>
-                                <!-- //.input-group -->
-                            </form>
-                        </div>
-                        <!-- //.countdown-form -->
-                    </div>
-                    <!-- //.col-md-4 col-md-offset-4 -->
-                </div>
-                <!-- //.row -->
-
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="countdown-text text-center">
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                        <!-- //.countdown-text -->
-                    </div>
-                    <!-- //.col-md-8 col-md-offset-2 -->
                 </div>
                 <!-- //.row -->
             </div>
@@ -184,10 +440,436 @@
         </div>
         <!-- //.section-inner -->
     </section>
-    <!-- //End Coming Soon Section -->    
+    <!-- //End Our Latest Work Section -->
+
+    <!-- Begin Testimonials Section -->
+    <section id="testimonials" class="section section-bgimage-yes">
+        <div class="section-inner">
+            <div class="section-overlay"></div>
+
+            <div class="container section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h2 class="main-title">Reviews</h2>
+
+                            <span class="section-line"></span>
+                        </div>
+                        <!-- //.section-title -->
+                    </div>
+                    <!-- //.col-md-12 -->
+                </div>    
+                <!-- //.row -->
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-item not-right-column not-bottom-column">
+                            <div class="testimonial-content">
+                                <p class="testimonial-title">Lorem Ipsum Title</p>
+
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                </blockquote>
+                            </div>
+                            <!-- //.testimonial-content -->
+
+                            <div class="testimonial-info clearfix">
+                                <img width="100" src="assets/img/testimonial-image-1.jpg" alt="" class="img-circle img-thumbnail"/>
+
+                                <p class="testimonial-author">
+                                    @Jane Doe, Jakarta
+                                    <br>
+                                    <em>Co-Founder at Cisco</em>
+                                </p>
+                            </div>
+                            <!-- //.testimonial-info -->
+                        </div>
+                        <!-- //.testimonial-item -->
+                    </div>
+                    <!-- //.col-md-4 -->
+
+                    <div class="col-md-4">
+                        <div class="testimonial-item not-right-column not-bottom-column">
+                            <div class="testimonial-content">
+                                <p class="testimonial-title">Lorem Ipsum Title</p>
+
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                </blockquote>
+                            </div>
+                            <!-- //.testimonial-content -->
+
+                            <div class="testimonial-info clearfix">
+                                <img width="100" src="assets/img/testimonial-image-2.jpg" alt="" class="img-circle img-thumbnail"/>
+
+                                <p class="testimonial-author">
+                                    @John Doe, Jakarta
+                                    <br>
+                                    <em>Creative Director at Apple</em>
+                                </p>
+                            </div>
+                            <!-- //.testimonial-info -->
+                        </div>
+                        <!-- //.testimonial-item -->
+                    </div>
+                    <!-- //.col-md-4 -->
+
+                    <div class="col-md-4">
+                        <div class="testimonial-item not-bottom-column">
+                            <div class="testimonial-content">
+                                <p class="testimonial-title">Lorem Ipsum Title</p>
+
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                </blockquote>
+                            </div>
+                            <!-- //.testimonial-content -->
+
+                            <div class="testimonial-info clearfix">
+                                <img width="100" src="assets/img/testimonial-image-3.jpg" alt="" class="img-circle img-thumbnail"/>
+
+                                <p class="testimonial-author">
+                                    @John Doe, Jakarta
+                                    <br>
+                                    <em>Managet at Microsoft</em>
+                                </p>
+                            </div>
+                            <!-- //.testimonial-info -->
+                        </div>
+                        <!-- //.testimonial-item -->
+                    </div>
+                    <!-- //.col-md-4 -->
+                </div>
+                <!-- //.row -->
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="testimonial-item not-right-column">
+                            <div class="testimonial-content">
+                                <p class="testimonial-title">Lorem Ipsum Title</p>
+
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                </blockquote>
+                            </div>
+                            <!-- //.testimonial-content -->
+
+                            <div class="testimonial-info clearfix">
+                                <img width="100" src="assets/img/testimonial-image-4.jpg" alt="" class="img-circle img-thumbnail"/>
+
+                                <p class="testimonial-author">
+                                    @John Doe, Jakarta
+                                    <br>
+                                    <em>Co-Founder at Cisco</em>
+                                </p>
+                            </div>
+                            <!-- //.testimonial-info -->
+                        </div>
+                        <!-- //.testimonial-item -->
+                    </div>
+                    <!-- //.col-md-4 -->
+
+                    <div class="col-md-4">
+                        <div class="testimonial-item not-right-column">
+                            <div class="testimonial-content">
+                                <p class="testimonial-title">Lorem Ipsum Title</p>
+
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                </blockquote>
+                            </div>
+                            <!-- //.testimonial-content -->
+
+                            <div class="testimonial-info clearfix">
+                                <img width="100" src="assets/img/testimonial-image-5.jpg" alt="" class="img-circle img-thumbnail"/>
+
+                                <p class="testimonial-author">
+                                    @Jane Doe, Jakarta
+                                    <br>
+                                    <em>Creative Director at Apple</em>
+                                </p>
+                            </div>
+                            <!-- //.testimonial-info -->
+                        </div>
+                        <!-- //.testimonial-item -->
+                    </div>
+                    <!-- //.col-md-4 -->
+
+                    <div class="col-md-4">
+                        <div class="testimonial-item">
+                            <div class="testimonial-content">
+                                <p class="testimonial-title">Lorem Ipsum Title</p>
+
+                                <blockquote>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                </blockquote>
+                            </div>
+                            <!-- //.testimonial-content -->
+
+                            <div class="testimonial-info clearfix">
+                                <img width="100" src="assets/img/testimonial-image-6.jpg" alt="" class="img-circle img-thumbnail"/>
+
+                                <p class="testimonial-author">
+                                    @Jane Doe, Jakarta
+                                    <br>
+                                    <em>Managet at Microsoft</em>
+                                </p>
+                            </div>
+                            <!-- //.testimonial-info -->
+                        </div>
+                        <!-- //.testimonial-item -->
+                    </div>
+                    <!-- //.col-md-4 -->
+                </div>
+                <!-- //.row -->
+            </div>
+            <!-- //.section-container -->
+        </div>
+        <!-- //.section-inner -->
+    </section>
+    <!-- //End Testimonials Section -->
+
+    <!-- Begin Why Us Section -->
+    <section id="faq" class="section">
+        <div class="section-inner">
+            <div class="container section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h2 class="main-title">FAQ?</h2>
+
+                            <h3 class="sub-title">Stuff we get asked</h3>
+
+                            <span class="section-line"></span>
+                        </div>
+                        <!-- //.section-title -->
+                    </div>
+                    <!-- //.col-md-12 -->
+                </div>    
+                <!-- //.row -->
+
+                <!-- Begin Content Boxes -->
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-boxes style-two top-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-question"></i> 
+                            </span>
+                            
+                            <div class="content-boxes-text">
+                                <h4>Question 1</h4>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                            <!-- //.content-boxes-text -->
+                        </div>
+                        <!-- //.content-boxes -->
+                    </div>
+                    <!-- //.col-sm-4 col-md-4 -->
+
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-boxes style-two top-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-question"></i> 
+                            </span>
+                            
+                            <div class="content-boxes-text">
+                                <h4>Question 2</h4>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                            <!-- //.content-boxes-text -->
+                        </div>
+                        <!-- //.content-boxes -->
+                    </div>
+                    <!-- //.col-sm-4 col-md-4 -->
+
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-boxes style-two top-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-question"></i> 
+                            </span>
+                            
+                            <div class="content-boxes-text">
+                                <h4>Question 3</h4>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                            <!-- //.content-boxes-text -->
+                        </div>
+                        <!-- //.content-boxes -->
+                    </div>
+                    <!-- //.col-sm-4 col-md-4 -->
+                </div>
+                <!-- //.row -->
+
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-boxes style-two bottom-column not-right-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-question"></i> 
+                            </span>
+                            <div class="content-boxes-text">
+                                <h4>Question 4</h4>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                            <!-- //.content-boxes-text -->
+                        </div>
+                        <!-- //.content-boxes -->
+                    </div>
+                    <!-- //.col-sm-4 col-md-4 -->
+
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-boxes style-two bottom-column not-right-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-question"></i> 
+                            </span>
+                            <div class="content-boxes-text">
+                                <h4>Question 5</h4>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                            <!-- //.content-boxes-text -->
+                        </div>
+                        <!-- //.content-boxes -->
+                    </div>
+                    <!-- //.col-sm-4 col-md-4 -->
+
+                    <div class="col-sm-4 col-md-4">
+                        <div class="content-boxes style-two bottom-column clearfix">
+                            <span class="content-boxes-icon">
+                                <i class="fa fa-question"></i> 
+                            </span>
+                            
+                            <div class="content-boxes-text">
+                                <h4>Question 6</h4>
+                                
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            </div>
+                            <!-- //.content-boxes-text -->
+                        </div>
+                        <!-- //.content-boxes -->
+                    </div>
+                    <!-- //.col-sm-4 col-md-4 -->
+                </div>
+                <!-- //End Content Boxes -->      
+            </div>
+            <!-- //.section-content -->
+        </div>
+        <!-- //.section-inner -->
+    </section>
+    <!-- //End Why Us Section -->
+
+    <!-- Begin Map -->
+    <div id="map">
+        <div id="cd-google-map">
+            <div id="google-container"></div>
+        </div>
+        <!-- //.cd-google-map -->
+    </div>
+    <!-- //End Map -->
 
     <!-- Begin Footer -->
     <footer class="footer">      
+
+<!-- Begin Footer Section -->
+        <section id="footer">
+            <div class="container">    
+                <div class="row">
+                    <div class="col-sm-4 col-md-4 footer-column not-right-column">
+                        <div class="footer-text">
+                            <h4>Get In Touch</h4>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla rebds vel pellentesqu</p>
+                            
+                            <ul class="icon-list list-unstyled">
+                                <li>
+                                    <i class="fa fa-phone"></i> +622176811
+                                </li>
+                                
+                                <li>
+                                    <i class="fa fa-envelope-o"></i> no-reply@rinjani.com
+                                </li>
+                                
+                                <li>
+                                    <i class="fa fa-map-marker"></i> 109 State Ave. NE, Olympia, WA
+                                </li>
+                                
+                                <li>
+                                    <i class="fa fa-clock-o"></i> Monday to Friday - 8.30 PM to 17 PM
+                                </li>
+                            </ul>
+                            
+                            <ul class="social-icon-list list-unstyled list-inline">
+                                <li>
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#"><i class="fa fa-youtube"></i></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </li>
+                                
+                                <li class="hidden-xs">
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //.footer-text -->
+                    </div>
+                    <!-- //.footer-column -->
+
+                    <div class="col-sm-4 col-md-4 footer-column not-right-column">
+                        <div class="footer-text">
+                            <h4>About Us</h4>
+                            
+                            <p>Gunung Rinjani adalah gunung yang berlokasi di Pulau Lombok, Nusa Tenggara Barat. Gunung ini merupakan gunung favorit bagi pendaki Indonesia karena keindahan pemandangannya. Gunung ini merupakan bagian dari Taman Nasional Gunung Rinjani yang memiliki luas sekitar 41.330 ha dan ini akan diusulkan penambahannya sehingga menjadi 76.000 ha ke arah barat dan timur. Secara administratif gunung ini berada dalam wilayah tiga kabupaten: Lombok Timur, Lombok Tengah dan Lombok Barat.</p>
+                        </div>
+                        <!-- //.footer-text -->
+                    </div>
+                    <!-- //.footer-column -->
+
+                    <div class="col-sm-4 col-md-4 footer-column">
+                        <div class="footer-text">
+                            <h4>Newsletter</h4>
+                            
+                            <p>Keep yourself up to date!</p>
+                            
+                            <form role="form" class="newsletter-form">
+                                <div class="form-group">
+                                    <label for="email_address">Email Address*</label>
+                                    <input type="email" id="email_address" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="first_name">First Name</label>
+                                    <input type="text" id="first_name" class="form-control">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-rj">Subscribe</button>
+                            </form>
+                        </div>
+                        <!-- //.footer-text -->
+                    </div>
+                    <!-- //.footer-column -->
+                </div>
+                <!-- //.row -->
+            </div>
+            <!-- //.container -->
+        </section>
+        <!-- //End Footer Section -->
 
         <!-- Begin Copyright -->
         <div id="copyright">
@@ -238,16 +920,14 @@
     <script src="assets/js/component/countdown.js"></script>
     <!--
     <script src="assets/js/component/counters.js"></script>
-    <script src="assets/js/component/pie-chart.js"></script>
-    <script src="assets/js/component/portfolio.js"></script>
+    <script src="assets/js/component/pie-chart.js"></script>    
     -->
+    <script src="assets/js/component/portfolio.js"></script>
     <script src="assets/js/component/animation.js"></script>
     
     <!-- Map JS -->
-    <!--
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="assets/js/component/map.js"></script>
-    -->
 
     <!-- Google Analytics -->
     <script>

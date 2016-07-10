@@ -3,8 +3,8 @@ $(function(){
         "use strict";
         
         // set your google maps parameters
-        var $latitude = -6.193948, //If you unable to find latitude and longitude of your address. Please visit http://www.latlong.net/convert-address-to-lat-long.html you can easily generate.
-            $longitude = 106.849184,
+        var $latitude = 47.045540, //If you unable to find latitude and longitude of your address. Please visit http://www.latlong.net/convert-address-to-lat-long.html you can easily generate.
+            $longitude = -122.901344,
             $map_zoom = 16; /* ZOOM SETTING */
 
         // google map custom marker icon
