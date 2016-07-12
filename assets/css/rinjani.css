@@ -538,7 +538,7 @@ span.navbar-trigger-close a:hover {
   position: relative;
   display: table;
   width: 100%;
-  height: auto;
+  height: 100%;
   color: #fff;
   background-image: url("../img/bg-intro.jpg");
   background-repeat: no-repeat;
@@ -550,7 +550,6 @@ span.navbar-trigger-close a:hover {
 }
 @media (min-width: 1280px) {
   #intro {
-    height: 100%;
     padding: 0px;
     background-attachment: fixed;
   }
