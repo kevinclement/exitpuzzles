@@ -297,13 +297,13 @@ p {
   background-color: #fff;
 }
 #page-loader .preload {
-  width: 128px;
-  height: 128px;
+  width: 55px;
+  height: 45px;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -64px;
-  margin-left: -64px;
+  margin-left: -25px;
 }
 
 
