@@ -113,9 +113,14 @@
     <!-- Begin Navbar -->
     <style>
         #headerLogo {
-            display:inline-block;
+            display:none;
             vertical-align:text-top;
             padding-right:4px;
+        }
+        @media (min-width: 350px) {
+            #headerLogo {
+	            display:inline-block;
+            }
         }
     </style>
     <nav id="navigation" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
