@@ -7,6 +7,7 @@ var express         = require('metalsmith-express');
 var assets          = require('metalsmith-assets');
 var discoverHelpers = require('metalsmith-discover-helpers');
 var concat          = require('metalsmith-concat');
+var fingerprint     = require('metalsmith-fingerprint');
 
 Metalsmith(__dirname)
   .metadata({
@@ -131,11 +132,6 @@ Metalsmith(__dirname)
   .use(discoverHelpers({
     directory: './src/helpers'
   }))
-  .use(layouts({
-    engine: 'handlebars',
-    directory: "./src/layouts",
-    partials: "./src/layouts/partial"
-  }))
   .use(concat({
     files: [
       "assets/plugins/jquery.min.js",
@@ -159,6 +155,23 @@ Metalsmith(__dirname)
     ],
     output: 'assets/js/vendor.js'
   }))
+  .use(concat({
+    files: [
+      "assets/js/main.js",
+    ],
+    output: 'assets/js/app.js'
+  }))
+  .use(fingerprint({
+    pattern: [
+      'assets/js/vendor.js',
+      'assets/js/app.js',
+    ]
+  }))
+  .use(layouts({
+    engine: 'handlebars',
+    directory: "./src/layouts",
+    partials: "./src/layouts/partial"
+  }))  
   .build(function(err, files) {
     if (err) { throw err; }
   });
