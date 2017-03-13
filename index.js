@@ -20,6 +20,18 @@ Metalsmith(__dirname)
       { url: "our-latest-work", text: "PHOTOS"},
       { url: "footer",          text: "CONTACT"},
     ],
+    rooms: {
+      landlord: {
+        images: [
+          { url: "assets/img/room/room1.jpg" },
+          { url: "assets/img/room/room2.jpg" },
+          { url: "assets/img/room/room3.jpg" },
+          { url: "assets/img/room/room4.jpg" },
+          { url: "assets/img/room/room5.jpg" },
+          { url: "assets/img/room/room6.jpg" }
+        ]
+      }
+    },
     faqRows: [
       { 
         questions: [

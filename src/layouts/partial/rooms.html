@@ -8,39 +8,19 @@
 
                         <span class="section-line"></span>
                     </div>
-                    <!-- //.section-title -->
                 </div>
-                <!-- //.col-md-12 -->
             </div>
-            <!-- //.row -->
 
             <div class="row">
                 <div class="col-md-6">
                     <div id="carousel-who-we-are" class="owl-carousel owl-theme">
+                        {{#each rooms.landlord.images }}
                         <div class="item">
-                            <img src="assets/img/room/room1.jpg" alt="" class="img-responsive img-rounded"/>
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/room/room2.jpg" alt="" class="img-responsive img-rounded"/>
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/room/room3.jpg" alt="" class="img-responsive img-rounded"/>
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/room/room4.jpg" alt="" class="img-responsive img-rounded"/>
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/room/room5.jpg" alt="" class="img-responsive img-rounded"/>
-                        </div>
-                        <div class="item">
-                            <img src="assets/img/room/room6.jpg" alt="" class="img-responsive img-rounded"/>
-                        </div>
-
-                        <!-- //.item -->
+                            <img src="{{url}}" alt="" class="img-responsive img-rounded"/>
+                        </div>                        
+                        {{/each}}
                     </div>
-                    <!-- //.owl-carousel -->
                 </div>
-                <!-- //.col-md-6 -->
 
                 <div class="col-md-6">
                     <div class="who-we-are-text">
@@ -56,15 +36,9 @@
                         <div>
                             <a href="//bookeo.com/exitpuzzles" class="btn btn-lg btn-rj">Book Now</a>
                         </div>
-                        <!-- //.page-scroll -->
                     </div>
-                    <!-- //.who-we-are-text -->
                 </div>
-                <!-- //.col-md-6 -->
             </div>
-            <!-- //.row -->
         </div>
-        <!-- //.section-content -->
     </div>
-    <!-- //.section-inner -->
 </section>
