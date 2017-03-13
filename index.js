@@ -90,12 +90,27 @@ Metalsmith(__dirname)
     ],
     teams: {
       latest: [
-        { url: "assets/img/teams/olympia-escape-room-1.jpg", title: "SUCCESS", comment: "Way fun" },
-        { url: "assets/img/teams/olympia-escape-room-2.jpg", title: "SUCCESS", comment: "Well done" },
-        { url: "assets/img/teams/olympia-escape-room-3.jpg", title: "SUCCESS", comment: "Piece of cake" },
-        { url: "assets/img/teams/olympia-escape-room-4.jpg", title: "SUCCESS", comment: "" },
-        { url: "assets/img/teams/olympia-escape-room-5.jpg", title: "SUCCESS", comment: "" },
-        { url: "assets/img/teams/olympia-escape-room-6.jpg", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-1.png",  title: "SUCCESS", comment: "Way fun" },
+        { url: "assets/img/teams/olympia-escape-room-2.png",  title: "SUCCESS", comment: "Well done" },
+        { url: "assets/img/teams/olympia-escape-room-3.png",  title: "SUCCESS", comment: "Piece of cake" },
+        { url: "assets/img/teams/olympia-escape-room-4.png",  title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-5.png",  title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-6.png",  title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-7.png",  title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-8.png",  title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-9.png",  title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-10.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-11.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-12.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-13.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-14.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-15.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-16.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-17.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-18.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-19.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-20.png", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-21.png", title: "SUCCESS", comment: "" },
       ]
     }
     
