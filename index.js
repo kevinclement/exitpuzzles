@@ -12,6 +12,7 @@ Metalsmith(__dirname)
     description: "It's about saying »Hello« to the World.",
     generator: "Metalsmith",
     url: "http://www.metalsmith.io/",
+    year: new Date().getFullYear(),
     headerLinks: [
       { url: "who-we-are",      text: "ABOUT"},
       { url: "faq",             text: "FAQ"},
@@ -82,6 +83,7 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use(buildinfo())
   .use(express())
   .use(watch({
           paths: {
