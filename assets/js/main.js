@@ -11,11 +11,15 @@ $(function() {
             e.preventDefault();
             
             // remove hidden classes
-            // TODO: do only for one row at a time
-            $(".teamPhoto").removeClass('hidden')
-
+            $(".teamPhoto.hidden:lt(3)").removeClass('hidden');
+           
             // need to run logic to fix up show classes now
             isotopePortfolio();
+
+            // if there are no more hidden photos, then remove the button
+            if ($(".teamPhoto.hidden").length <= 0) {
+                $('#moreTeams').remove();
+            }
         });        
     });
         
