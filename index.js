@@ -6,13 +6,10 @@ var watch           = require('metalsmith-watch');
 var express         = require('metalsmith-express');
 var assets          = require('metalsmith-assets');
 var discoverHelpers = require('metalsmith-discover-helpers');
+var concat          = require('metalsmith-concat');
 
 Metalsmith(__dirname)
   .metadata({
-    title: "My Static Site & Blog",
-    description: "It's about saying »Hello« to the World.",
-    generator: "Metalsmith",
-    url: "http://www.metalsmith.io/",
     year: new Date().getFullYear(),
     headerLinks: [
       { url: "who-we-are",      text: "ABOUT"},
@@ -138,7 +135,30 @@ Metalsmith(__dirname)
     engine: 'handlebars',
     directory: "./src/layouts",
     partials: "./src/layouts/partial"
-  }))  
+  }))
+  .use(concat({
+    files: [
+      "assets/plugins/jquery.min.js",
+      "assets/plugins/bootstrap/js/bootstrap.min.js",
+      "assets/plugins/detectmobilebrowser/detectmobilebrowser.js",
+      "assets/plugins/smartresize/smartresize.js",
+      "assets/plugins/jquery-easing/jquery.easing.min.js",
+      "assets/plugins/jquery-sticky/jquery.sticky.js",
+      "assets/plugins/jquery-inview/jquery.inview.min.js",
+      "assets/plugins/jquery-countTo/jquery.countTo.js",
+      "assets/plugins/jquery-countdown/jquery.countdown.min.js",
+      "assets/plugins/owl-carousel/owl.carousel.min.js",
+      "assets/plugins/isotope/isotope.pkgd.min.js",
+      "assets/plugins/jquery-magnificPopup/jquery.magnific-popup.min.js", 
+      "assets/plugins/jquery-validation/jquery.validate.min.js",
+      "assets/js/animation.js",
+      "assets/js/component/countdown.js",
+      "assets/js/component/portfolio.js",
+      "assets/js/component/animation.js",
+      "assets/js/component/map.js"
+    ],
+    output: 'assets/js/vendor.js'
+  }))
   .build(function(err, files) {
     if (err) { throw err; }
   });
