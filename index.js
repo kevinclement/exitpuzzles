@@ -83,7 +83,6 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
-  .use(buildinfo())
   .use(express())
   .use(watch({
           paths: {
