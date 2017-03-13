@@ -1,6 +1,6 @@
 # ExitPuzzles website
 
 dev:
-npm install -g live-server
-live-server
-http://localhost:8080
+  npm install
+  npm start
+  http://localhost:3000
