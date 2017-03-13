@@ -28,36 +28,17 @@
                 </div>
             </div>
 
-            {{#each teams}}
             <div class="row">
                 <div class="col-md-12">
                     <div class="popup-portfolio">
 
-                        {{#each .}}
-                        <div class="portfolio-item grow">
-                            <div class="inner-content">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-detail">
-                                        <a href="{{url}}" title="{{title}}">
-                                            <div class="portfolio-text">
-                                                <h4>{{title}}</h4>
-                                                <p>{{comment}}</p>   
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <img src="{{url}}" alt="" class="img-responsive"/>
-                            </div>
-                        </div>
+                        {{#each teams.latest}}
+                          {{teamPhoto @index}}
                         {{/each}}  
 
                     </div>
                 </div>
             </div>
-            {{/each}}  
-            
-        </div>
 
             <div class="row">
                 <div class="col-md-12">
@@ -67,6 +48,7 @@
 
                 </div>
             </div>
+         
         </div>
     </div>
 </section>

@@ -1,10 +1,11 @@
-var Metalsmith  = require('metalsmith');
-var markdown    = require('metalsmith-markdown');
-var layouts     = require('metalsmith-layouts');
-var permalinks  = require('metalsmith-permalinks');
-var watch       = require('metalsmith-watch');
-var express     = require('metalsmith-express');
-var assets      = require('metalsmith-assets');
+var Metalsmith      = require('metalsmith');
+var markdown        = require('metalsmith-markdown');
+var layouts         = require('metalsmith-layouts');
+var permalinks      = require('metalsmith-permalinks');
+var watch           = require('metalsmith-watch');
+var express         = require('metalsmith-express');
+var assets          = require('metalsmith-assets');
+var discoverHelpers = require('metalsmith-discover-helpers');
 
 Metalsmith(__dirname)
   .metadata({
@@ -89,10 +90,13 @@ Metalsmith(__dirname)
     ],
     teams: {
       latest: [
-        { url: "assets/img/teams/olympia-escape-room-1.jpg", title: "",        comment: "Way fun" },
+        { url: "assets/img/teams/olympia-escape-room-1.jpg", title: "SUCCESS", comment: "Way fun" },
         { url: "assets/img/teams/olympia-escape-room-2.jpg", title: "SUCCESS", comment: "Well done" },
         { url: "assets/img/teams/olympia-escape-room-3.jpg", title: "SUCCESS", comment: "Piece of cake" },
-      ],
+        { url: "assets/img/teams/olympia-escape-room-4.jpg", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-5.jpg", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-6.jpg", title: "SUCCESS", comment: "" },
+      ]
     }
     
   })
@@ -112,11 +116,14 @@ Metalsmith(__dirname)
     source: './assets',
     destination: './assets'
   }))
+  .use(discoverHelpers({
+    directory: './src/helpers'
+  }))
   .use(layouts({
     engine: 'handlebars',
     directory: "./src/layouts",
     partials: "./src/layouts/partial"
-  }))
+  }))  
   .build(function(err, files) {
     if (err) { throw err; }
   });
