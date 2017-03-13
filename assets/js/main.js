@@ -6,63 +6,19 @@ $(function() {
     $(window).load(function(){
         $('#page-loader').fadeOut('fast');
 
-        // delay load team photos (first row)
-        //var teamSection = $('#teamSection');
-        //$(loadTeamRow()).insertAfter('#teamSectionHeaderRow');
-
         // hookup buttons to load next teams
+        $('#moreTeams').click(function(e){ 
+            e.preventDefault();
+            
+            // remove hidden classes
+            // TODO: do only for one row at a time
+            $(".teamPhoto").removeClass('hidden')
 
+            // need to run logic to fix up show classes now
+            isotopePortfolio();
+        });        
     });
-    
-
-    var loadTeamRow = function() {
-        return '<div class="row"> ' +
-               '  <div class="col-md-12"> ' + 
-               '    <div class="popup-portfolio">' +
-                      loadTeam1() +
-                      loadTeam2() + 
-                      loadTeam2() + 
-               '    </div>' + 
-               '  </div>' +
-               '</div>';
-    };
-
-    var loadTeam1 = function() {
-        return '<div class="portfolio-item grow illustration logo">' +
-               '  <div class="inner-content">' +
-               '   <div class="portfolio-content">' +
-               '     <div class="portfolio-detail">' +
-               '       <a href="assets/img/teams/olympia-escape-room-1.jpg" title="July 2016 - Team 1">' +
-               '         <div class="portfolio-text">' +
-               '           <h4>FAILED</h4>' +
-               '           <p>So close</p>' +
-               '         </div>' +
-               '       </a>' +
-               '     </div>' +
-               '   </div>' +
-               '   <img src="assets/img/teams/olympia-escape-room-1.jpg" alt="" class="img-responsive"/>' +
-               '  </div>' +                                
-               '</div>';
-    };
-
-    var loadTeam2 = function() {
-        return '<div class="portfolio-item grow identity">' +
-               '  <div class="inner-content">' +
-               '   <div class="portfolio-content">' +
-               '     <div class="portfolio-detail">' +
-               '       <a href="assets/img/teams/olympia-escape-room-1.jpg" title="July 2016 - Team 1">' +
-               '         <div class="portfolio-text">' +
-               '           <h4>FAILED</h4>' +
-               '           <p>So close</p>' +
-               '         </div>' +
-               '       </a>' +
-               '     </div>' +
-               '   </div>' +
-               '   <img src="assets/img/teams/olympia-escape-room-1.jpg" alt="" class="img-responsive"/>' +
-               '  </div>' +                                
-               '</div>';
-    };
-    
+        
     /*---------------------------------------*/
     /*  JQUERY FOR PAGE SCROLLING FEATURE
     /*  requires jQuery Easing plugin

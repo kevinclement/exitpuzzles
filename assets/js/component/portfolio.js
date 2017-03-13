@@ -1,24 +1,22 @@
+function isotopePortfolio() {
+    $('.popup-portfolio').isotope({ 
+        filter: '*', 
+        animationOptions: { 
+            duration: 750, 
+            easing: 'linear', 
+            queue: false
+        },
+        masonry: {
+            isFitWidth: true,
+            isResizable: true,
+            gutter: 15
+        }
+    }); 
+};
+
 $(function(){
-    $(window).load(function(){
-        var $container = $('.popup-portfolio'); 
-        
-        var isotopePortfolio = function(filter){
-            $container.isotope({ 
-                filter: filter, 
-                animationOptions: { 
-                    duration: 750, 
-                    easing: 'linear', 
-                    queue: false
-                },
-                masonry: {
-                    isFitWidth: true,
-                    isResizable: true,
-                    gutter: 15
-                }
-            }); 
-        };
-        
-        isotopePortfolio('*');
+    $(window).load(function() {  
+        isotopePortfolio();
         
         $('.filter-portfolio').find('a').click(function(e){ 
             e.preventDefault();
@@ -35,19 +33,19 @@ $(function(){
             
             isotopePortfolio(selector);
         }); 
-    });
-    
-    $('.popup-portfolio').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        fixedContentPos: false,
-        gallery: {
-            enabled: true,
-            preload: [0,2],
-            navigateByImgClick: false,
-            arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
-            tPrev: 'Previous (Left arrow key)',
-            tNext: 'Next (Right arrow key)'
-        }
+
+        $('.popup-portfolio').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            fixedContentPos: false,
+            gallery: {
+                enabled: true,
+                preload: [0,2],
+                navigateByImgClick: false,
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+                tPrev: 'Previous (Left arrow key)',
+                tNext: 'Next (Right arrow key)'
+            }
+        });        
     });
 });
