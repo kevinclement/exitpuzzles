@@ -87,12 +87,14 @@ Metalsmith(__dirname)
         }
       ]
     ],
-    teams: [
-      [     
-        { url: "assets/img/portfolio/p1.jpg", title: "FAILED",  comment: "So close" },
-        { url: "assets/img/portfolio/p2.jpg", title: "SUCCESS", comment: "Nailed it" }
-      ]
-    ]
+    teams: {
+      latest: [
+        { url: "assets/img/teams/olympia-escape-room-1.jpg", title: "",        comment: "Way fun" },
+        { url: "assets/img/teams/olympia-escape-room-2.jpg", title: "SUCCESS", comment: "Well done" },
+        { url: "assets/img/teams/olympia-escape-room-3.jpg", title: "SUCCESS", comment: "Piece of cake" },
+      ],
+    }
+    
   })
   .source('./src')
   .destination('./build')
