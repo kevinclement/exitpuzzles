@@ -13,12 +13,12 @@ Metalsmith(__dirname)
     generator: "Metalsmith",
     url: "http://www.metalsmith.io/",
     headerLinks: [
-      {url: "who-we-are", text: "ABOUT"},
-      {url: "faq", text: "FAQ"},
-      {url: "reviews", text: "REVIEWS"},
-      {url: "our-latest-work", text: "PHOTOS"},
-      {url: "footer", text: "CONTACT"},
-    ]
+      { url: "who-we-are",      text: "ABOUT"},
+      { url: "faq",             text: "FAQ"},
+      { url: "reviews",         text: "REVIEWS"},
+      { url: "our-latest-work", text: "PHOTOS"},
+      { url: "footer",          text: "CONTACT"},
+    ],
   })
   .source('./src')
   .destination('./build')
