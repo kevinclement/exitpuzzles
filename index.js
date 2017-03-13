@@ -105,11 +105,11 @@ Metalsmith(__dirname)
   .clean(true)
   .use(express())
   .use(watch({
-          paths: {
-            '${source}/**/*': "**/*"
-          },
-          livereload: true
-        }))
+    paths: {
+      '${source}/**/*': "**/*"
+    },
+    livereload: true
+  }))
   .use(markdown())
   .use(permalinks())
   .use(assets({
