@@ -28,45 +28,35 @@
                 </div>
             </div>
 
+            {{#each teams}}
             <div class="row">
                 <div class="col-md-12">
                     <div class="popup-portfolio">
+
+                        {{#each .}}
                         <div class="portfolio-item grow">
                             <div class="inner-content">
                                 <div class="portfolio-content">
                                     <div class="portfolio-detail">
-                                        <a href="assets/img/portfolio/p1.jpg" title="July 2016 - Team 1">
+                                        <a href="{{url}}" title="{{title}}">
                                             <div class="portfolio-text">
-                                                <h4>FAILED</h4>
-                                                <p>So close</p>   
+                                                <h4>{{title}}</h4>
+                                                <p>{{comment}}</p>   
                                             </div>
                                         </a>
                                     </div>
                                 </div>
 
-                                <img src="assets/img/portfolio/p1.jpg" alt="" class="img-responsive"/>
+                                <img src="{{url}}" alt="" class="img-responsive"/>
                             </div>
                         </div>
+                        {{/each}}  
 
-                        <div class="portfolio-item grow">
-                            <div class="inner-content">
-                                <div class="portfolio-content">
-                                    <div class="portfolio-detail">
-                                        <a href="assets/img/portfolio/p2.jpg" title="July 2016 - Team 2">
-                                            <div class="portfolio-text">
-                                                <h4>SUCCESS</h4>
-                                                <p>Nailed it</p>   
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <img src="assets/img/portfolio/p2.jpg" alt="" class="img-responsive"/>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+            {{/each}}  
+            
         </div>
 
             <div class="row">

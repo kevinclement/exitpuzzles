@@ -90,7 +90,13 @@ Metalsmith(__dirname)
           }
         ]
       }
-    ]    
+    ],
+    teams: [
+      [     
+        { url: "assets/img/portfolio/p1.jpg", title: "FAILED",  comment: "So close" },
+        { url: "assets/img/portfolio/p2.jpg", title: "SUCCESS", comment: "Nailed it" }
+      ]
+    ]
   })
   .source('./src')
   .destination('./build')
