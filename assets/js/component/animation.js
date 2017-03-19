@@ -19,16 +19,7 @@ $(function(){
         /*---------------------------------------*/
         $('.content-boxes').css('opacity', 0).one('inview', function(isInView){
             if (isInView) {$(this).addClass('animated flipInY delayp1').css('opacity', 1);}
-        });
-        
-        
-        /*---------------------------------------*/
-        /*  COUNTERS
-        /*---------------------------------------*/
-        $('.counter-item').css('opacity', 0).one('inview', function(isInView){
-            if (isInView) {$(this).addClass('animated fadeInUp delayp1').css('opacity', 1);}
-        });
-        
+        });        
         
         /*---------------------------------------*/
         /*  FUNNY BOXES
