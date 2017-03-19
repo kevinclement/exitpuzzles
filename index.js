@@ -186,14 +186,21 @@ Metalsmith(__dirname)
   }))
   .use(discoverHelpers({
      directory: './src/helpers'
-   }))
+  }))
   .use(layouts({
      engine: 'handlebars',
      directory: "./src/layouts",
      partials: "./src/layouts/partial"
-   }))
-   .use(moveRemove({
-     remove: ['index.md', 'helpers/*', 'layouts/*', 'assets/js/app.js', 'assets/js/vendor.js', 'assets/css/vendor.css']
+  }))
+  .use(moveRemove({
+    remove: [
+      'index.md',
+      'helpers/*',
+      'layouts/*',
+      'assets/css/app.css',
+      'assets/js/app.js',
+      'assets/js/vendor.js',
+      'assets/css/vendor.css']
   }))
   .build(function(err, files) {
     if (err) { throw err; }
