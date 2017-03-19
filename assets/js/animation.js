@@ -18,31 +18,9 @@ $(function(){
         });
         
         /*---------------------------------------*/
-        /*  QUOTE SECTION
+        /*  Reviews SECTION
         /*---------------------------------------*/
-        $('#quote .quote-text').css('opacity', 0).one('inview', function(isInView){
-            if (isInView) {$(this).addClass('animated fadeInUp delayp1').css('opacity', 1);}
-        });        
-        
-        /*---------------------------------------*/
-        /*  MEET THE TEAM SECTION
-        /*---------------------------------------*/
-        $('#meet-the-team').find('.team-element').each(function(i){            
-            var element = $(this),
-            itemsDelay   = ( isNaN($(this).data('animation-delay')) ? 50 : $(this).data('animation-delay'));
-            element.css('opacity', 0).one('inview', function(isInView) {
-                if (isInView){
-                    setTimeout(function(){
-                        element.addClass('animated fadeInUp').css('opacity', 1);
-                    } , itemsDelay * (i * 2));
-                }
-            });
-        });
-        
-        /*---------------------------------------*/
-        /*  TESTIMONIALS SECTION
-        /*---------------------------------------*/
-        $('#testimonials').find('.testimonial-item').css('opacity', 0).one('inview', function(isInView){
+        $('#reviews').find('.testimonial-item').css('opacity', 0).one('inview', function(isInView){
             if (isInView) {$(this).addClass('animated flipInY').css('opacity', 1);}
         })
     }
