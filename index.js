@@ -137,11 +137,7 @@ Metalsmith(__dirname)
       "plugins/jquery-inview/jquery.inview.min.js",
       "plugins/owl-carousel/owl.carousel.min.js",
       "plugins/isotope/isotope.pkgd.min.js",
-      "plugins/jquery-magnificPopup/jquery.magnific-popup.min.js", 
-      "js/animation.js",
-      "js/component/portfolio.js",
-      "js/component/animation.js",
-      "js/component/map.js"
+      "plugins/jquery-magnificPopup/jquery.magnific-popup.min.js"
     ],
     searchPaths: "assets/",
     output: 'assets/js/vendor.js'
@@ -153,11 +149,7 @@ Metalsmith(__dirname)
       "plugins/animate-css/animate.css",
       "plugins/owl-carousel/owl.carousel.css",
       "plugins/owl-carousel/owl.theme.css",
-      "plugins/jquery-magnificPopup/magnific-popup.css",
-      "css/component/component.css",
-      "css/component/colors/yellow.css",
-      "css/rinjani.css",
-      "css/colors/yellow.css"
+      "plugins/jquery-magnificPopup/magnific-popup.css"
     ],
     insertNewLine: true,
     searchPaths: "assets/",
@@ -165,16 +157,31 @@ Metalsmith(__dirname)
   }))
   .use(concat({
     files: [
+      "js/animation.js",
+      "js/component/portfolio.js",
+      "js/component/animation.js",
+      "js/component/map.js",
       "js/main.js",
     ],
     searchPaths: "assets/",
     output: 'assets/js/app.js'
   }))
+  .use(concat({
+    files: [
+      "css/component/component.css",
+      "css/component/colors/yellow.css",
+      "css/rinjani.css",
+      "css/colors/yellow.css"
+    ],
+    searchPaths: "assets/",
+    output: 'assets/css/app.css'
+  }))
   .use(fingerprint({
     pattern: [
       'assets/js/vendor.js',
       'assets/css/vendor.css',
-      'assets/js/app.js'
+      'assets/js/app.js',
+      'assets/css/app.css'
     ]
   }))
   .use(discoverHelpers({
