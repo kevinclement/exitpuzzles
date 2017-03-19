@@ -8,6 +8,7 @@ var assets          = require('metalsmith-assets');
 var discoverHelpers = require('metalsmith-discover-helpers');
 var concat          = require('metalsmith-concat');
 var fingerprint     = require('metalsmith-fingerprint');
+var moveRemove      = require('metalsmith-move-remove');
 
 Metalsmith(__dirname)
   .metadata({
@@ -113,9 +114,6 @@ Metalsmith(__dirname)
     }
     
   })
-  .source('./src')
-  .destination('./build')
-  .clean(true)
   .use(express())
   .use(watch({
     paths: {
@@ -124,50 +122,72 @@ Metalsmith(__dirname)
     livereload: true
   }))
   .use(markdown())
-  .use(permalinks())
   .use(assets({
-    source: './assets',
-    destination: './assets'
-  }))
-  .use(discoverHelpers({
-    directory: './src/helpers'
+    source: './assets/img',
+    destination: './assets/img'
   }))
   .use(concat({
     files: [
-      "assets/plugins/jquery.min.js",
-      "assets/plugins/bootstrap/js/bootstrap.min.js",
-      "assets/plugins/detectmobilebrowser/detectmobilebrowser.js",
-      "assets/plugins/smartresize/smartresize.js",
-      "assets/plugins/jquery-easing/jquery.easing.min.js",
-      "assets/plugins/jquery-sticky/jquery.sticky.js",
-      "assets/plugins/jquery-inview/jquery.inview.min.js",
-      "assets/plugins/owl-carousel/owl.carousel.min.js",
-      "assets/plugins/isotope/isotope.pkgd.min.js",
-      "assets/plugins/jquery-magnificPopup/jquery.magnific-popup.min.js", 
-      "assets/js/animation.js",
-      "assets/js/component/portfolio.js",
-      "assets/js/component/animation.js",
-      "assets/js/component/map.js"
+      "plugins/jquery.min.js",
+      "plugins/bootstrap/js/bootstrap.min.js",
+      "plugins/detectmobilebrowser/detectmobilebrowser.js",
+      "plugins/smartresize/smartresize.js",
+      "plugins/jquery-easing/jquery.easing.min.js",
+      "plugins/jquery-sticky/jquery.sticky.js",
+      "plugins/jquery-inview/jquery.inview.min.js",
+      "plugins/owl-carousel/owl.carousel.min.js",
+      "plugins/isotope/isotope.pkgd.min.js",
+      "plugins/jquery-magnificPopup/jquery.magnific-popup.min.js", 
+      "js/animation.js",
+      "js/component/portfolio.js",
+      "js/component/animation.js",
+      "js/component/map.js"
     ],
+    searchPaths: "assets/",
     output: 'assets/js/vendor.js'
   }))
   .use(concat({
     files: [
-      "assets/js/main.js",
+      "plugins/bootstrap/css/bootstrap.css",
+      "plugins/font-awesome/css/font-awesome.css",
+      "plugins/animate-css/animate.css",
+      "plugins/owl-carousel/owl.carousel.css",
+      "plugins/owl-carousel/owl.theme.css",
+      "plugins/jquery-magnificPopup/magnific-popup.css",
+      "css/component/component.css",
+      "css/component/colors/yellow.css",
+      "css/rinjani.css",
+      "css/colors/yellow.css"
     ],
+    insertNewLine: true,
+    searchPaths: "assets/",
+    output: 'assets/css/vendor.css'
+  }))
+  .use(concat({
+    files: [
+      "js/main.js",
+    ],
+    searchPaths: "assets/",
     output: 'assets/js/app.js'
   }))
   .use(fingerprint({
     pattern: [
       'assets/js/vendor.js',
-      'assets/js/app.js',
+      'assets/css/vendor.css',
+      'assets/js/app.js'
     ]
   }))
+  .use(discoverHelpers({
+     directory: './src/helpers'
+   }))
   .use(layouts({
-    engine: 'handlebars',
-    directory: "./src/layouts",
-    partials: "./src/layouts/partial"
-  }))  
+     engine: 'handlebars',
+     directory: "./src/layouts",
+     partials: "./src/layouts/partial"
+   }))
+   .use(moveRemove({
+     remove: ['index.md', 'helpers/*', 'layouts/*', 'assets/js/app.js', 'assets/js/vendor.js', 'assets/css/vendor.css']
+  }))
   .build(function(err, files) {
     if (err) { throw err; }
   });
