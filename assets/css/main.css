@@ -1,0 +1,80 @@
+/*---------------------------------------------------------------------*/
+/*  Intro
+/*---------------------------------------------------------------------*/
+.bookBtn {
+    font-family: 'Raleway', sans-serif;
+    margin-right:5px;
+}
+@media (min-width: 768px)
+{
+    .bookBtn {
+    padding: 20px 25px;
+    font-size: 22px;
+    }
+}
+.learnMore {
+    display:inline-block;
+    margin-top:20px;
+}
+
+/*---------------------------------------------------------------------*/
+/*  Header
+/*---------------------------------------------------------------------*/
+#headerLogo {
+    display:none;
+    vertical-align:text-top;
+    padding-right:4px;
+}
+@media (min-width: 350px) {
+    #headerLogo {
+        display:inline-block;
+    }
+}
+
+/*---------------------------------------------------------------------*/
+/*  FAQ
+/*---------------------------------------------------------------------*/
+#faq > .section-inner .section-content .section-title {
+    color: #b7ada4;
+}
+#faq > .section-inner .section-content .section-title > .section-line {
+    background-color: #b7ada4;
+}
+#faq {
+    color: #fff;
+}
+#faq a {
+    color:#F89D29;
+}
+#faq i {
+    color: #000;
+}
+#faq .content-boxes.style-two:hover > .content-boxes-icon > i {
+    background-color: #fff;
+}
+#faq .content-boxes:hover {
+    cursor: default;
+}
+
+/*---------------------------------------------------------------------*/
+/*  Reviews
+/*---------------------------------------------------------------------*/
+.testimonial-item > .testimonial-content .testimonial-title {
+    color: #000;
+}
+.testimonial-item > .testimonial-info .testimonial-author {
+    color: #000;
+}
+.testimonial-item > .testimonial-content blockquote p {
+    color: #000;
+}
+
+/*---------------------------------------------------------------------*/
+/*  Teams
+/*---------------------------------------------------------------------*/
+#our-latest-work > .section-inner .section-content .section-title {
+    color: #b7ada4;
+}
+#our-latest-work > .section-inner .section-content .section-title > .section-line {
+    background-color: #b7ada4;
+}

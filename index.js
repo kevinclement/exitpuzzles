@@ -176,7 +176,8 @@ Metalsmith(__dirname)
       "css/component/component.css",
       "css/component/colors/yellow.css",
       "css/rinjani.css",
-      "css/colors/yellow.css"
+      "css/colors/yellow.css",
+      "css/main.css",
     ],
     searchPaths: "assets/",
     output: 'assets/css/app.css'
