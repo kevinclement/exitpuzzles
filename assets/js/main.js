@@ -81,8 +81,10 @@ $(function() {
     /*  PAGE LOADER
     /*---------------------------------------*/
     $(window).load(function(){
+
+        // TODO: still want?
         $('#page-loader').fadeOut('fast');
-        
+
         // init isotope to move photos around
         $('.popup-portfolio').isotope({ 
             filter: '*', 
@@ -97,7 +99,22 @@ $(function() {
                 gutter: 15
             }
         }); 
-        
+
+        // hookup pop-up for images
+        $('.popup-portfolio').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            fixedContentPos: false,
+            gallery: {
+                enabled: true,
+                preload: [0,2],
+                navigateByImgClick: false,
+                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+                tPrev: 'Previous (Left arrow key)',
+                tNext: 'Next (Right arrow key)'
+            }
+        });
+
         // add first 3 photos row after page load so its faster to load
         AddRowOfTeams();
 
