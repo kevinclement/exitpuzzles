@@ -2,3 +2,5 @@ node_modules/
 diff/
 npm-debug.log
 Thumbs.db
+
+build/
