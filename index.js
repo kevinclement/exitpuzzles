@@ -167,6 +167,7 @@ Metalsmith(__dirname)
       "js/component/animation.js",
       "js/component/map.js",
       "js/main.js",
+      "js/analytics.js",
     ],
     searchPaths: "assets/",
     output: 'assets/js/app.js'
