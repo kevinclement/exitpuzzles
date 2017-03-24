@@ -126,6 +126,10 @@ Metalsmith(__dirname)
     source: './assets/img',
     destination: './assets/img'
   }))
+  .use(assets({
+    source: './assets/plugins/font-awesome/fonts',
+    destination: './assets/fonts'
+  }))
   .use(concat({
     files: [
       "plugins/jquery.min.js",
@@ -145,7 +149,7 @@ Metalsmith(__dirname)
   .use(concat({
     files: [
       "plugins/bootstrap/css/bootstrap.css",
-      "plugins/font-awesome/css/font-awesome.css",
+      "plugins/font-awesome/css/font-awesome-custom.css",
       "plugins/animate-css/animate.css",
       "plugins/owl-carousel/owl.carousel.css",
       "plugins/owl-carousel/owl.theme.css",
