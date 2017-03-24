@@ -4,7 +4,6 @@ var layouts         = require('metalsmith-layouts');
 var watch           = require('metalsmith-watch');
 var express         = require('metalsmith-express');
 var assets          = require('metalsmith-assets');
-var discoverHelpers = require('metalsmith-discover-helpers');
 var concat          = require('metalsmith-concat');
 var fingerprint     = require('metalsmith-fingerprint');
 var moveRemove      = require('metalsmith-move-remove');
@@ -190,9 +189,6 @@ Metalsmith(__dirname)
       'assets/css/app.css'
     ]
   }))
-  .use(discoverHelpers({
-     directory: './src/helpers'
-  }))
   .use(layouts({
      engine: 'handlebars',
      directory: "./src/layouts",
@@ -201,7 +197,6 @@ Metalsmith(__dirname)
   .use(moveRemove({
     remove: [
       'index.md',
-      'helpers/*',
       'layouts/*',
       'assets/css/app.css',
       'assets/js/app.js',
