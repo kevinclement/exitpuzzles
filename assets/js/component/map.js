@@ -2,6 +2,11 @@ $(function(){
     $(window).load(function(){
         "use strict";
         
+        // if google script didnt load, then bail
+        if (typeof(google) === 'undefined') {
+            return;
+        }
+
         // set your google maps parameters
         var $latitude = 47.045540, //If you unable to find latitude and longitude of your address. Please visit http://www.latlong.net/convert-address-to-lat-long.html you can easily generate.
             $longitude = -122.901344,

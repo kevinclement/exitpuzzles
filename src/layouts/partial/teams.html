@@ -24,19 +24,14 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col-md-12">
-                    <div class="popup-portfolio">
-
-                        {{#each teams.latest}}
-                          {{teamPhoto @index}}
-                        {{/each}}  
-
+                    <div id="teamPlaceholder" class="popup-portfolio">
+                        <!-- Filled in by jquery in main.js after page is loaded -->
                     </div>
                 </div>
             </div>
-            <!--
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title text-center">
@@ -45,7 +40,6 @@
 
                 </div>
             </div>
-            -->
         </div>
     </div>
 </section>
