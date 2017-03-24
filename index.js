@@ -1,7 +1,6 @@
 var Metalsmith      = require('metalsmith');
 var markdown        = require('metalsmith-markdown');
 var layouts         = require('metalsmith-layouts');
-var permalinks      = require('metalsmith-permalinks');
 var watch           = require('metalsmith-watch');
 var express         = require('metalsmith-express');
 var assets          = require('metalsmith-assets');
