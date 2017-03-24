@@ -6,43 +6,6 @@
 /*  assets/css/rinjani.css
 /*-----------------------------------------------------------------------
 
-1. GLOBAL STYLES
-
-2. ANIMATION DELAY
-
-3. PAGE LOADER
-
-4. NAVBAR
-	4.1 NAVBAR - CENTER MENU
-	4.2 NAVBAR - SIDE MENU
-
-5. INTRO SECTION
-
-6. WHO WE ARE SECTION
-
-7. FUN FACT SECTION
-
-8. OUR MAIN SKILLS SECTION
-
-9. QUOTE SECTION
-
-10. KEEP IN TOUCH SECTION
-
-11. MEET THE TEAM SECTION
-
-12. TESTIMONIALS SECTION
-
-13. COMING SOON SECTION
-
-14. CONTACT US SECTION
-
-15. MAP
-
-16. FOOTER
-
------------------------------------------------------------------------*/
-
-
 /*---------------------------------------------------------------------*/
 /*  1. GLOBAL STYLES
 /*---------------------------------------------------------------------*/
@@ -93,24 +56,6 @@ p {
   font-weight: 400;
   line-height: 1.6;
   margin: 0 0 15px;
-}
-.push {
-  margin-left: 0px;
-  -webkit-transition: all 0.2s ease 0s;
-  -moz-transition: all 0.2s ease 0s;
-  -ms-transition: all 0.2s ease 0s;
-  -o-transition: all 0.2s ease 0s;
-  transition: all 0.2s ease 0s;
-}
-@media (min-width: 992px) {
-  .push.pushed-left {
-    margin-left: 250px;
-  }
-}
-@media (min-width: 992px) {
-  .push.pushed-right {
-    margin-left: -250px;
-  }
 }
 .section {
   background-color: #f2f4f4;
@@ -199,35 +144,6 @@ p {
   filter: alpha(opacity=80);
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
 }
-.section.section-parallax-yes > .section-inner > .section-overlay {
-  content: '';
-  position: absolute;
-  background-color: #000;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  top: 0px;
-  zoom: 1;
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=80)";
-}
-.section.section-parallax-yes > .section-inner > .parallax .bcg {
-  width: 100%;
-  height: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-@media (min-width: 1280px) {
-  .section.section-parallax-yes > .section-inner > .parallax .bcg {
-    background-attachment: fixed;
-  }
-}
-
 
 /*---------------------------------------------------------------------*/
 /*  2. ANIMATION DELAY
@@ -242,16 +158,6 @@ p {
   -moz-transition-delay: .1s;
   -o-transition-delay: .1s;
 }
-.delayp2 {
-  animation-delay: .2s;
-  -moz-animation-delay: .2s;
-  -webkit-animation-delay: .2s;
-  -o-animation-delay: .2s;
-  transition-delay: .2s;
-  -webkit-transition-delay: .2s;
-  -moz-transition-delay: .2s;
-  -o-transition-delay: .2s;
-}
 .delayp3 {
   animation-delay: .3s;
   -moz-animation-delay: .3s;
@@ -262,27 +168,6 @@ p {
   -moz-transition-delay: .3s;
   -o-transition-delay: .3s;
 }
-.delayp4 {
-  animation-delay: .4s;
-  -moz-animation-delay: .4s;
-  -webkit-animation-delay: .4s;
-  -o-animation-delay: .4s;
-  transition-delay: .4s;
-  -webkit-transition-delay: .4s;
-  -moz-transition-delay: .4s;
-  -o-transition-delay: .4s;
-}
-.delayp5 {
-  animation-delay: .5s;
-  -moz-animation-delay: .5s;
-  -webkit-animation-delay: .5s;
-  -o-animation-delay: .5s;
-  transition-delay: .5s;
-  -webkit-transition-delay: .5s;
-  -moz-transition-delay: .5s;
-  -o-transition-delay: .5s;
-}
-
 
 /*---------------------------------------------------------------------*/
 /*  3. PAGE LOADER
@@ -377,7 +262,6 @@ p {
   }
 }
 
-
 /*---------------------------------------------------------------------*/
 /*  4.1. NAVBAR - CENTER MENU
 /*---------------------------------------------------------------------*/
@@ -396,7 +280,6 @@ p {
     padding-left: 5px;
   }
 }
-
 
 /*---------------------------------------------------------------------*/
 /*  4.2. NAVBAR - SIDE MENU
@@ -624,7 +507,6 @@ span.navbar-trigger-close a:hover {
     font-size: 22px;
   }
 }
-
 
 /*---------------------------------------------------------------------*/
 /*  6. WHO WE ARE SECTION
