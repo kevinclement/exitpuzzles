@@ -540,7 +540,7 @@ span.navbar-trigger-close a:hover {
   width: 100%;
   height: 100%;
   color: #fff;
-  background-image: url("../img/bg-intro.jpg");
+  background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: cover;
@@ -666,7 +666,7 @@ span.navbar-trigger-close a:hover {
 /*  12. TESTIMONIALS SECTION
 /*---------------------------------------------------------------------*/
 #testimonials {
-  background-image: url("../img/bg-testimonial.jpg");
+  background-image: url("../img/background.jpg");
 }
 #testimonials > .section-inner .section-content .section-title {
   color: #b7ada4;
