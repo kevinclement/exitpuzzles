@@ -37,6 +37,9 @@ serve(ms, opt);
 // finally do the build
 build(ms, opt)
 
+/*---------------------------------------------------------------------*/
+/*  Print the starting string
+/*---------------------------------------------------------------------*/
 function printStartString(options) {
   process.stdout.write('Starting... [');
 
@@ -48,6 +51,9 @@ function printStartString(options) {
   process.stdout.write(optArr.join(',') + ']\n');
 }
 
+/*---------------------------------------------------------------------*/
+/*  Metadata
+/*---------------------------------------------------------------------*/
 function metadata(ms, options) {
   ms.metadata({
     year: new Date().getFullYear(),
@@ -149,10 +155,16 @@ function metadata(ms, options) {
   });
 }
 
+/*---------------------------------------------------------------------*/
+/*  Markdown
+/*---------------------------------------------------------------------*/
 function markdown(ms, options) {
   ms.use(msMarkdown());
 }
 
+/*---------------------------------------------------------------------*/
+/*  Assets copying
+/*---------------------------------------------------------------------*/
 function assets(ms, options) {
   ms.use(msAssets({
     source: './assets/img',
@@ -164,6 +176,9 @@ function assets(ms, options) {
   }));
 }
 
+/*---------------------------------------------------------------------*/
+/*  Bundling
+/*---------------------------------------------------------------------*/
 function bundle(ms, options) {
   ms.use(msConcat({
       files: [
@@ -218,6 +233,9 @@ function bundle(ms, options) {
     }));
 }
 
+/*---------------------------------------------------------------------*/
+/*  Fingerprint files
+/*---------------------------------------------------------------------*/
 function fingerprint(ms, options) {
   ms.use(msFingerprint({
     pattern: [
@@ -229,6 +247,9 @@ function fingerprint(ms, options) {
   }))
 }
 
+/*---------------------------------------------------------------------*/
+/*  Setup templating and tempating parts
+/*---------------------------------------------------------------------*/
 function templates(ms, options) {
   ms.use(msLayouts({
      engine: 'handlebars',
@@ -237,6 +258,9 @@ function templates(ms, options) {
   }))
 }
 
+/*---------------------------------------------------------------------*/
+/*  Cleanup - stuff we dont want in final directory
+/*---------------------------------------------------------------------*/
 function cleanup(ms, options) {
   ms.use(moveRemove({
     remove: [
@@ -249,6 +273,9 @@ function cleanup(ms, options) {
   }));
 }
 
+/*---------------------------------------------------------------------*/
+/*  Watch
+/*---------------------------------------------------------------------*/
 function watch(ms, options) {
   if (options.watch) {
     ms.use(msWatch({
@@ -261,12 +288,18 @@ function watch(ms, options) {
   }
 }
 
+/*---------------------------------------------------------------------*/
+/*  Serve
+/*---------------------------------------------------------------------*/
 function serve(ms, options) {
   if (options.serve) {
     ms.use(msExpress());
   }
 }
 
+/*---------------------------------------------------------------------*/
+/*  Build & Deploy
+/*---------------------------------------------------------------------*/
 function build(ms, options) {
   ms.build(function(err, files) {
       if (err) { throw err; }
