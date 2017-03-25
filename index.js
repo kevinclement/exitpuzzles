@@ -7,12 +7,33 @@ var assets          = require('metalsmith-assets');
 var concat          = require('metalsmith-concat');
 var fingerprint     = require('metalsmith-fingerprint');
 var moveRemove      = require('metalsmith-move-remove');
+var ncp             = require('ncp');
+var rimraf          = require('rimraf');
 var argv            = require('yargs').argv;
 
 // get watch and serve config from command line (--watch, --serve)
 var opt = {
   watch: argv.watch,
   serve: argv.serve,
+  deploy: argv.deploy,
+}
+
+// If deploy is requested, just do that and return
+if (opt.deploy) {
+  console.log('Deploying...');
+  
+  console.log('  removing old dist folder...');
+  rimraf('dist/*', {}, () => {
+
+    console.log('  copying build to dist...');
+    ncp('build/', 'dist/', (err) => {
+      if (err) {
+        return console.error(err);
+      }
+    });
+  });
+
+  return;
 }
 
 if (!opt.watch && !opt.serve) {
