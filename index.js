@@ -1,50 +1,55 @@
-var Metalsmith      = require('metalsmith');
-var markdown        = require('metalsmith-markdown');
-var layouts         = require('metalsmith-layouts');
-var watch           = require('metalsmith-watch');
-var express         = require('metalsmith-express');
-var assets          = require('metalsmith-assets');
-var concat          = require('metalsmith-concat');
-var fingerprint     = require('metalsmith-fingerprint');
-var moveRemove      = require('metalsmith-move-remove');
-var ncp             = require('ncp');
-var rimraf          = require('rimraf');
-var argv            = require('yargs').argv;
+var Metalsmith     = require('metalsmith');
+var msMarkdown     = require('metalsmith-markdown');
+var msLayouts      = require('metalsmith-layouts');
+var msWatch        = require('metalsmith-watch');
+var msExpress      = require('metalsmith-express');
+var msAssets       = require('metalsmith-assets');
+var msConcat       = require('metalsmith-concat');
+var msFingerprint  = require('metalsmith-fingerprint');
+var moveRemove     = require('metalsmith-move-remove');
+var ncp            = require('ncp');
+var rimraf         = require('rimraf');
+var argv           = require('yargs').argv;
 
 // get watch and serve config from command line (--watch, --serve)
 var opt = {
+  build: true,
   watch: argv.watch,
   serve: argv.serve,
   deploy: argv.deploy,
 }
 
-// If deploy is requested, just do that and return
-if (opt.deploy) {
-  console.log('Deploying...');
-  
-  console.log('  removing old dist folder...');
-  rimraf('dist/*', {}, () => {
+// show what options we're running as
+printStartString(opt);
 
-    console.log('  copying build to dist...');
-    ncp('build/', 'dist/', (err) => {
-      if (err) {
-        return console.error(err);
-      }
-    });
+// setup all use parts of metalsmith
+var ms = Metalsmith(__dirname);
+metadata(ms, opt);
+assets(ms, opt);
+markdown(ms, opt);
+bundle(ms, opt);
+fingerprint(ms, opt);
+templates(ms, opt);
+cleanup(ms, opt);
+watch(ms, opt);
+serve(ms, opt);
+
+// finally do the build
+build(ms, opt)
+
+function printStartString(options) {
+  process.stdout.write('Starting... [');
+
+  var optArr = [];
+  ['deploy', 'build', 'watch', 'serve'].forEach((cmd) => {
+    if (options[cmd]) optArr.push(cmd.toUpperCase());
   });
 
-  return;
+  process.stdout.write(optArr.join(',') + ']\n');
 }
 
-if (!opt.watch && !opt.serve) {
-  console.log('Starting build...');
-}
-else {
-  console.log('Starting dev mode...');
-}
-
-var ms = Metalsmith(__dirname)
-  .metadata({
+function metadata(ms, options) {
+  ms.metadata({
     year: new Date().getFullYear(),
     headerLinks: [
       { url: "who-we-are",      text: "ABOUT"},
@@ -140,70 +145,81 @@ var ms = Metalsmith(__dirname)
         { url: "assets/img/teams/olympia-escape-room-20.png", title: "SUCCESS", comment: "Well done" },
         { url: "assets/img/teams/olympia-escape-room-21.png", title: "FAILED",  comment: "" },
       ]
-    */
-    
-  })
-  .use(markdown())
-  .use(assets({
+    */    
+  });
+}
+
+function markdown(ms, options) {
+  ms.use(msMarkdown());
+}
+
+function assets(ms, options) {
+  ms.use(msAssets({
     source: './assets/img',
     destination: './assets/img'
   }))
-  .use(assets({
+  .use(msAssets({
     source: './assets/plugins/font-awesome/fonts',
     destination: './assets/fonts'
-  }))
-  .use(concat({
-    files: [
-      "plugins/jquery.min.js",
-      "plugins/bootstrap/js/bootstrap.js",
-      "plugins/detectmobilebrowser/detectmobilebrowser.js",
-      "plugins/smartresize/smartresize.js",
-      "plugins/jquery-easing/jquery.easing.min.js",
-      "plugins/jquery-sticky/jquery.sticky.js",
-      "plugins/jquery-inview/jquery.inview.min.js",
-      "plugins/owl-carousel/owl.carousel.min.js",
-      "plugins/isotope/isotope.pkgd.min.js",
-      "plugins/jquery-magnificPopup/jquery.magnific-popup.min.js"
-    ],
-    searchPaths: "assets/",
-    output: 'assets/js/vendor.js'
-  }))
-  .use(concat({
-    files: [
-      "plugins/bootstrap/css/bootstrap.css",
-      "plugins/font-awesome/css/font-awesome-custom.css",
-      "plugins/animate-css/animate.css",
-      "plugins/owl-carousel/owl.carousel.css",
-      "plugins/owl-carousel/owl.theme.css",
-      "plugins/jquery-magnificPopup/magnific-popup.css"
-    ],
-    insertNewLine: true,
-    searchPaths: "assets/",
-    output: 'assets/css/vendor.css'
-  }))
-  .use(concat({
-    files: [
-      "js/animation.js",
-      "js/component/animation.js",
-      "js/component/map.js",
-      "js/main.js",
-      "js/analytics.js",
-    ],
-    searchPaths: "assets/",
-    output: 'assets/js/app.js'
-  }))
-  .use(concat({
-    files: [
-      "css/component/component.css",
-      "css/component/colors/yellow.css",
-      "css/rinjani.css",
-      "css/colors/yellow.css",
-      "css/main.css",
-    ],
-    searchPaths: "assets/",
-    output: 'assets/css/app.css'
-  }))
-  .use(fingerprint({
+  }));
+}
+
+function bundle(ms, options) {
+  ms.use(msConcat({
+      files: [
+        "plugins/jquery.min.js",
+        "plugins/bootstrap/js/bootstrap.js",
+        "plugins/detectmobilebrowser/detectmobilebrowser.js",
+        "plugins/smartresize/smartresize.js",
+        "plugins/jquery-easing/jquery.easing.min.js",
+        "plugins/jquery-sticky/jquery.sticky.js",
+        "plugins/jquery-inview/jquery.inview.min.js",
+        "plugins/owl-carousel/owl.carousel.min.js",
+        "plugins/isotope/isotope.pkgd.min.js",
+        "plugins/jquery-magnificPopup/jquery.magnific-popup.min.js"
+      ],
+      searchPaths: "assets/",
+      output: 'assets/js/vendor.js'
+    }))
+    .use(msConcat({
+      files: [
+        "plugins/bootstrap/css/bootstrap.css",
+        "plugins/font-awesome/css/font-awesome-custom.css",
+        "plugins/animate-css/animate.css",
+        "plugins/owl-carousel/owl.carousel.css",
+        "plugins/owl-carousel/owl.theme.css",
+        "plugins/jquery-magnificPopup/magnific-popup.css"
+      ],
+      insertNewLine: true,
+      searchPaths: "assets/",
+      output: 'assets/css/vendor.css'
+    }))
+    .use(msConcat({
+      files: [
+        "js/animation.js",
+        "js/component/animation.js",
+        "js/component/map.js",
+        "js/main.js",
+        "js/analytics.js",
+      ],
+      searchPaths: "assets/",
+      output: 'assets/js/app.js'
+    }))
+    .use(msConcat({
+      files: [
+        "css/component/component.css",
+        "css/component/colors/yellow.css",
+        "css/rinjani.css",
+        "css/colors/yellow.css",
+        "css/main.css",
+      ],
+      searchPaths: "assets/",
+      output: 'assets/css/app.css'
+    }));
+}
+
+function fingerprint(ms, options) {
+  ms.use(msFingerprint({
     pattern: [
       'assets/js/vendor.js',
       'assets/css/vendor.css',
@@ -211,12 +227,18 @@ var ms = Metalsmith(__dirname)
       'assets/css/app.css'
     ]
   }))
-  .use(layouts({
+}
+
+function templates(ms, options) {
+  ms.use(msLayouts({
      engine: 'handlebars',
      directory: "./src/layouts",
      partials: "./src/layouts/partial"
   }))
-  .use(moveRemove({
+}
+
+function cleanup(ms, options) {
+  ms.use(moveRemove({
     remove: [
       'index.md',
       'layouts/*',
@@ -225,22 +247,41 @@ var ms = Metalsmith(__dirname)
       'assets/js/vendor.js',
       'assets/css/vendor.css']
   }));
-
-if (opt.watch) {
-  ms.use(watch({
-      paths: {
-        '${source}/**/*': "**/*",
-        './assets/**/*': "**/*"
-      },
-      livereload: true
-    }));
 }
 
-if (opt.serve) {
-  ms.use(express());
+function watch(ms, options) {
+  if (options.watch) {
+    ms.use(msWatch({
+        paths: {
+          '${source}/**/*': "**/*",
+          './assets/**/*': "**/*"
+        },
+        livereload: true
+      }));
+  }
 }
 
-// Finally kick off the build
-ms.build(function(err, files) {
-    if (err) { throw err; }
-});
+function serve(ms, options) {
+  if (options.serve) {
+    ms.use(msExpress());
+  }
+}
+
+function build(ms, options) {
+  ms.build(function(err, files) {
+      if (err) { throw err; }
+
+      // if deploying copy build to dist
+      if (options.deploy) {
+        console.log('  removing old dist folder...');
+        rimraf('dist/*', {}, () => {
+          console.log('  copying build to dist...');
+          ncp('build/', 'dist/', (err) => {
+            if (err) {
+              return console.error(err);
+            }
+          });
+        });
+      }
+  });
+}
