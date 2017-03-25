@@ -34,6 +34,10 @@
 /*---------------------------------------------------------------------*/
 /*  FAQ
 /*---------------------------------------------------------------------*/
+#faq .col-md-4:nth-child(3n+1) {
+  clear:both;
+}
+
 #faq > .section-inner .section-content .section-title {
     color: #b7ada4;
 }
@@ -65,7 +69,7 @@
 #reviews .col-md-4 {
     padding-bottom:32px;
 }
-#reviews .col-md-4:nth-child(4n) {
+#reviews .col-md-4:nth-child(3n+1) {
   clear:both;
 }
 .testimonial-item > .testimonial-content .testimonial-title {
