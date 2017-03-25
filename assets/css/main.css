@@ -59,6 +59,15 @@
 /*---------------------------------------------------------------------*/
 /*  Reviews
 /*---------------------------------------------------------------------*/
+#reviews .section-content {
+    padding-bottom:30px;
+}
+#reviews .col-md-4 {
+    padding-bottom:32px;
+}
+#reviews .col-md-4:nth-child(4n) {
+  clear:both;
+}
 .testimonial-item > .testimonial-content .testimonial-title {
     color: #000;
 }

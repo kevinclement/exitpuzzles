@@ -64,10 +64,11 @@ function metadata(ms, options) {
 
   // pull other metadata from config files
   ms.use(msMetadata({
-    nav:   'config/nav.json',
-    rooms: 'config/rooms.json',
-    faq:   'config/faq.json',
-    teams: 'config/teams.json'
+    nav:     'config/nav.json',
+    reviews: 'config/reviews.json',
+    rooms:   'config/rooms.json',
+    faq:     'config/faq.json',
+    teams:   'config/teams.json'
   }));
 }
 

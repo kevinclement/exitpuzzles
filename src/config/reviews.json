@@ -1,0 +1,10 @@
+{
+    "reviews": [
+        { "author": "Caitlyn R.", "image": "assets/img/reviews/q1.jpg", "quote": "A uniquely tense bonding experience." },
+        { "author": "Taryn B.", "image": "assets/img/reviews/q2.jpg", "quote": "Most fun I've had in awhile.  Room was amazingly well thought out and seamlessly put together! 10/10" },
+        { "author": "Apolonio O.", "image": "assets/img/reviews/q3.jpg", "quote": "Everything is amazingly detailed and awesome.  Props to the minds behind it." },
+        { "author": "Riley W.", "image": "assets/img/reviews/q4.jpg", "quote": "Extremely fun!  I loved how unique each puzzle was. The fact that there was actually a story to go with the escaping objective was a nice touch too." },
+        { "author": "Kaelan R.", "image": "assets/img/reviews/q5.jpg", "quote": "There is so much depth to the puzzles and stories, it was so much fun, I felt like a straight up detective." },
+        { "author": "Krystal S.", "image": "assets/img/reviews/q6.jpg", "quote": "Fun and unique experience!  It was like a mystery puzzle brought to life." }
+    ]
+}

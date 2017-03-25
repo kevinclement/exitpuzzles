@@ -6,122 +6,28 @@
                 <div class="col-md-12">
                     <div class="section-title text-center">
                         <h2 class="main-title">Reviews</h2>
-
                         <span class="section-line"></span>
                     </div>
                 </div>
             </div>    
 
             <div class="row">
-                <div class="col-md-4">
-                    <div class="testimonial-item not-right-column not-bottom-column">
-                        <div class="testimonial-content">
-                            <blockquote>
-                                <p>A uniquely tense bonding experience.</p>
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial-info clearfix">
-                            <img width="100" src="assets/img/reviews/q1.jpg" alt="" class="img-circle img-thumbnail"/>
-
-                            <p class="testimonial-author">
-                                Caitlyn R.                                    
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="testimonial-item not-right-column not-bottom-column">
-                        <div class="testimonial-content">
-                            <blockquote>
-                                <p>Most fun I've had in awhile.  Room was amazingly well thought out and seamlessly put together! 10/10</p>
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial-info clearfix">
-                            <img width="100" src="assets/img/reviews/q2.jpg" alt="" class="img-circle img-thumbnail"/>
-
-                            <p class="testimonial-author">
-                                Taryn B.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="testimonial-item not-bottom-column">
-                        <div class="testimonial-content">
-                            <blockquote>
-                                <p>Everything is amazingly detailed and awesome.  Props to the minds behind it.</p>
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial-info clearfix">
-                            <img width="100" src="assets/img/reviews/q3.jpg" alt="" class="img-circle img-thumbnail"/>
-
-                            <p class="testimonial-author">
-                                Apolonio O.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-                <div class="row">
-                <div class="col-md-4">
-                    <div class="testimonial-item not-right-column">
-                        <div class="testimonial-content">
-                            <blockquote>
-                                <p>Extremely fun!  I loved how unique each puzzle was. The fact that there was actually a story to go with the escaping objective was a nice touch too.</p>
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial-info clearfix">
-                            <img width="100" src="assets/img/reviews/q4.jpg" alt="" class="img-circle img-thumbnail"/>
-
-                            <p class="testimonial-author">
-                                Riley W.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="testimonial-item not-right-column">
-                        <div class="testimonial-content">
-                            <blockquote>
-                                <p>There is so much depth to the puzzles and stories, it was so much fun, I felt like a straight up detective.</p>
-                            </blockquote>
-                        </div>
-
-                        <div class="testimonial-info clearfix">
-                            <img width="100" src="assets/img/reviews/q5.jpg" alt="" class="img-circle img-thumbnail"/>
-
-                            <p class="testimonial-author">
-                                Kaelan R.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
+                {{#each reviews.reviews}}
                 <div class="col-md-4">
                     <div class="testimonial-item">
                         <div class="testimonial-content">
                             <blockquote>
-                                <p>Fun and unique experience!  It was like a mystery puzzle brought to life.</p>
+                                <p>{{quote}}</p>
                             </blockquote>
                         </div>
 
                         <div class="testimonial-info clearfix">
-                            <img width="100" src="assets/img/reviews/q6.jpg" alt="" class="img-circle img-thumbnail"/>
-
-                            <p class="testimonial-author">
-                                Krystal S.
-                            </p>
+                            <img width="100" src="{{image}}" alt="" class="img-circle img-thumbnail"/>
+                            <p class="testimonial-author">{{author}}</p>
                         </div>
                     </div>
                 </div>
+                {{/each}}
             </div>
                            
         </div>
