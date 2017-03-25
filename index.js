@@ -7,8 +7,22 @@ var assets          = require('metalsmith-assets');
 var concat          = require('metalsmith-concat');
 var fingerprint     = require('metalsmith-fingerprint');
 var moveRemove      = require('metalsmith-move-remove');
+var argv            = require('yargs').argv;
 
-Metalsmith(__dirname)
+// get watch and serve config from command line (--watch, --serve)
+var opt = {
+  watch: argv.watch,
+  serve: argv.serve,
+}
+
+if (!opt.watch && !opt.serve) {
+  console.log('Starting build...');
+}
+else {
+  console.log('Starting dev mode...');
+}
+
+var ms = Metalsmith(__dirname)
   .metadata({
     year: new Date().getFullYear(),
     headerLinks: [
@@ -108,14 +122,6 @@ Metalsmith(__dirname)
     */
     
   })
-  .use(express())
-  .use(watch({
-    paths: {
-      '${source}/**/*': "**/*",
-      './assets/**/*': "**/*"
-    },
-    livereload: true
-  }))
   .use(markdown())
   .use(assets({
     source: './assets/img',
@@ -197,7 +203,23 @@ Metalsmith(__dirname)
       'assets/js/app.js',
       'assets/js/vendor.js',
       'assets/css/vendor.css']
-  }))
-  .build(function(err, files) {
+  }));
+
+if (opt.watch) {
+  ms.use(watch({
+      paths: {
+        '${source}/**/*': "**/*",
+        './assets/**/*': "**/*"
+      },
+      livereload: true
+    }));
+}
+
+if (opt.serve) {
+  ms.use(express());
+}
+
+// Finally kick off the build
+ms.build(function(err, files) {
     if (err) { throw err; }
-  });
+});

@@ -2,7 +2,9 @@
   "name": "exitpuzzles",
   "private": true,
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js --watch --serve",
+    "build": "node index.js",
+    "deploy": "node node_modules/ncp/bin/ncp build/ dist/" 
   },
   "dependencies": {
     "handlebars": "^4.0.5",
@@ -15,5 +17,9 @@
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-move-remove": "0.0.1",
     "metalsmith-watch": "^1.0.3"
+  },
+  "devDependencies": {
+    "ncp": "^2.0.0",
+    "yargs": "^7.0.2"
   }
 }
