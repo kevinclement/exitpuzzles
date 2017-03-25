@@ -134,7 +134,7 @@ Metalsmith(__dirname)
   .use(concat({
     files: [
       "plugins/jquery.min.js",
-      "plugins/bootstrap/js/bootstrap.min.js",
+      "plugins/bootstrap/js/bootstrap.js",
       "plugins/detectmobilebrowser/detectmobilebrowser.js",
       "plugins/smartresize/smartresize.js",
       "plugins/jquery-easing/jquery.easing.min.js",
