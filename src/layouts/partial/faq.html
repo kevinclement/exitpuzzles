@@ -15,25 +15,21 @@
                 </div>
             </div>    
 
-            {{#each faqs}}
             <div class="row">
-                {{#each .}}                    
+                {{#each faqs}}
                 <div class="col-sm-4 col-md-4">
                     <div class="content-boxes style-two top-column clearfix">
                         <span class="content-boxes-icon">
                             <i class="fa fa-question"></i> 
                         </span>
-                        
                         <div class="content-boxes-text">
                             <h4>{{title}}</h4>
-                            
                             <p>{{{text}}}</p>
                         </div>
                     </div>
                 </div>
                 {{/each}}
             </div>
-            {{/each}}           
 
         </div>
     </div>
