@@ -1,0 +1,54 @@
+<style>
+    #our-latest-work {
+        background-image: url("../img/bg-testimonial.jpg");
+    }
+    #our-latest-work > .section-inner .section-content .section-title {
+        color: #b7ada4;
+    }
+    #our-latest-work > .section-inner .section-content .section-title > .section-line {
+        background-color: #b7ada4;
+    }
+
+</style>
+
+<section id="our-latest-work" class="section section-bgimage-yes" style="background-image: url('assets/img/bg-testimonial.jpg');">
+    <div class="section-inner">
+        <div class="section-overlay"></div>
+
+        <div class="container section-content" id="teamSection">
+            <div class="row" id="teamSectionHeaderRow">
+                <div class="col-md-12">
+                    <div class="section-title text-center">
+                        <h2 class="main-title">Photos</h2>
+
+                        <h3 class="sub-title">Past teams that conquered the room (and some that didn't)</h3>
+
+                        <span class="section-line"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="popup-portfolio">
+
+                        {{#each teams.latest}}
+                          {{teamPhoto @index}}
+                        {{/each}}  
+
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center">
+                        <a href="#" id="moreTeams" class="btn btn-lg btn-rj">More Teams</a>
+                    </div>
+
+                </div>
+            </div>
+            -->
+        </div>
+    </div>
+</section>
