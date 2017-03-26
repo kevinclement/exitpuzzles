@@ -11,6 +11,7 @@ var msUglify       = require('metalsmith-uglify');
 var msCleanCSS     = require('metalsmith-clean-css');
 var msHtmlMinifier = require("metalsmith-html-minifier");
 var msMoveRemove   = require('metalsmith-move-remove');
+var msGA           = require('metalsmith-google-analytics').default;
 var ncp            = require('ncp');
 var rimraf         = require('rimraf');
 var argv           = require('yargs').argv;
@@ -38,6 +39,7 @@ fingerprint(ms, opt);
 templates(ms, opt);
 minify_html(ms, opt);
 cleanup(ms, opt);
+analytics(ms, opt);
 watch(ms, opt);
 serve(ms, opt);
 
@@ -133,7 +135,6 @@ function bundle(ms, options) {
         "js/component/animation.js",
         "js/component/map.js",
         "js/main.js",
-        "js/analytics.js",
       ],
       searchPaths: "assets/",
       output: 'assets/js/app.js'
@@ -169,6 +170,13 @@ function minify_html(ms, options) {
   if (!options.production) { return; }
 
   ms.use(msHtmlMinifier());
+}
+
+/*---------------------------------------------------------------------*/
+/*  Analytics
+/*---------------------------------------------------------------------*/
+function analytics(ms, options) {
+  ms.use(msGA('UA-75362713-1'));
 }
 
 /*---------------------------------------------------------------------*/
