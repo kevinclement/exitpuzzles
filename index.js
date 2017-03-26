@@ -9,6 +9,7 @@ var msFingerprint  = require('metalsmith-fingerprint');
 var msMetadata     = require('metalsmith-metadata');
 var msUglify       = require('metalsmith-uglify');
 var msCleanCSS     = require('metalsmith-clean-css');
+var msHtmlMinifier = require("metalsmith-html-minifier");
 var msMoveRemove   = require('metalsmith-move-remove');
 var ncp            = require('ncp');
 var rimraf         = require('rimraf');
@@ -34,6 +35,7 @@ bundle(ms, opt);
 minify(ms, opt);
 fingerprint(ms, opt);
 templates(ms, opt);
+minify_html(ms, opt);
 cleanup(ms, opt);
 watch(ms, opt);
 serve(ms, opt);
@@ -162,6 +164,10 @@ function minify(ms, options) {
 
   // setup clean-css for css
   ms.use(msCleanCSS());
+}
+
+function minify_html(ms, options) {
+  ms.use(msHtmlMinifier());
 }
 
 /*---------------------------------------------------------------------*/
