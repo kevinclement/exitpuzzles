@@ -8,6 +8,7 @@ var msConcat       = require('metalsmith-concat');
 var msFingerprint  = require('metalsmith-fingerprint');
 var msMetadata     = require('metalsmith-metadata');
 var msUglify       = require('metalsmith-uglify');
+var msCleanCSS     = require('metalsmith-clean-css');
 var msMoveRemove   = require('metalsmith-move-remove');
 var ncp            = require('ncp');
 var rimraf         = require('rimraf');
@@ -155,7 +156,12 @@ function bundle(ms, options) {
 /*  Minification
 /*---------------------------------------------------------------------*/
 function minify(ms, options) {
+
+  // setup uglify for javascript
   ms.use(msUglify());
+
+  // setup clean-css for css
+  ms.use(msCleanCSS());
 }
 
 /*---------------------------------------------------------------------*/
