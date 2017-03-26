@@ -157,7 +157,9 @@ function minify(ms, options) {
   if (!options.production) { return; }
 
   // setup uglify for javascript
-  ms.use(msUglify());
+  ms.use(msUglify({
+    nameTemplate: "[name].[ext]"
+  }));
 
   // setup clean-css for css
   ms.use(msCleanCSS());
@@ -175,9 +177,9 @@ function minify_html(ms, options) {
 function fingerprint(ms, options) {
   ms.use(msFingerprint({
     pattern: [
-      'assets/js/vendor.min.js',
+      'assets/js/vendor.js',
       'assets/css/vendor.css',
-      'assets/js/app.min.js',
+      'assets/js/app.js',
       'assets/css/app.css'
     ]
   }))
@@ -204,9 +206,7 @@ function cleanup(ms, options) {
       'layouts/*',
       'assets/css/app.css',
       'assets/js/app.js',
-      'assets/js/app.min.js',
       'assets/js/vendor.js',
-      'assets/js/vendor.min.js',
       'assets/css/vendor.css']
   }));
 }
