@@ -82,9 +82,6 @@ $(function() {
     /*---------------------------------------*/
     $(window).load(function(){
 
-        // TODO: still want?
-        $('#page-loader').fadeOut('fast');
-
         // init isotope to move photos around
         $('.popup-portfolio').isotope({ 
             filter: '*', 
