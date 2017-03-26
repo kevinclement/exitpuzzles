@@ -217,6 +217,7 @@ $(function() {
     $('#carousel-who-we-are').owlCarousel({
         autoPlay: true,
         lazyLoad:true,
+        lazyFollow:true,
         slideSpeed: 300,
         paginationSpeed: 400,
         singleItem: true
