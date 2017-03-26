@@ -37,7 +37,6 @@
 #faq .col-md-4:nth-child(3n+1) {
   clear:both;
 }
-
 #faq > .section-inner .section-content .section-title {
     color: #b7ada4;
 }
@@ -50,16 +49,34 @@
 #faq a {
     color:#F89D29;
 }
-#faq i {
-    color: #000;
-}
 #faq .content-boxes.style-two:hover > .content-boxes-icon > i {
     background-color: #fff;
 }
 #faq .content-boxes:hover {
     cursor: default;
 }
-
+.faq-icon-box {
+    background:#f89d29;
+    border-radius: 3px;
+    width: 36px;
+    height: 36px;
+    float: left;
+    color: #000;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+.faq-icon-box:hover {
+    background: white;
+}
+.faq-icon {
+    display:inline-block;
+    fill: currentColor;
+    width:20px;
+    height:20px;
+    margin:8px;
+}
 /*---------------------------------------------------------------------*/
 /*  Reviews
 /*---------------------------------------------------------------------*/
