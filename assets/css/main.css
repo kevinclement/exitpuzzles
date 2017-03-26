@@ -112,9 +112,17 @@
 /*---------------------------------------------------------------------*/
 /*  Footer
 /*---------------------------------------------------------------------*/
-.footer-icon {
+.footer-icon-social {
     height: 18px;
     width: 18px;
     margin-top:10px;
     fill: currentColor;
+}
+.footer-icon-contact {
+    height: 14px;
+    width: 14px;
+    margin-right:10px;
+    fill: currentColor;
+    position:relative;
+    top:2px;
 }
