@@ -3,9 +3,18 @@ $(function() {
     var imageLoadQueue = [];
 
     // monkey patch in callback for image
-    document.imageLoaded = function() {
+    document.imageLoaded = function(img) {
 
-        // triggger isotop layout now that an image has been loaded
+        // show the image now that it has loaded
+        $(img).show();
+
+        // add it to the isotope system
+        var element = $(img.parentElement.parentElement);
+        $iso.isotope()
+            .append(element)
+            .isotope('appended', element);
+
+        // trigger isotope layout
         $iso.isotope('layout');
 
         // load next image if we still have one in the queue
@@ -65,7 +74,7 @@ $(function() {
                 $('#moreTeams').show();
             }
 
-            return; 
+            return;
         }
 
         var team = teams[imageLoadQueue.pop()];
@@ -82,17 +91,13 @@ $(function() {
         '           </div>                                                   ' +
         '       </div>                                                       ' +
         '       <img src="' + team.url + '"                                  ' +
-        '            onload="imageLoaded()" class="img-responsive"/>         ' +
+        '            onload="imageLoaded(this)"                              ' +
+        '            class="hiddenPhoto img-responsive"/>                    ' +
         '   </div>                                                           ' +
         '</div>                                                              ';
 
         var teamHtml = $(html);
         teamHtml.appendTo($('#teamPlaceholder'));
-
-        // will add it to the isotop, but won't trigger layout until image is loaded
-        $iso.isotope()
-            .append(teamHtml)
-            .isotope('appended', teamHtml);
     }
 
     /*---------------------------------------*/

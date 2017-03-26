@@ -108,6 +108,9 @@
 #our-latest-work > .section-inner .section-content .section-title > .section-line {
     background-color: #b7ada4;
 }
+.hiddenPhoto {
+    display:none;
+}
 
 /*---------------------------------------------------------------------*/
 /*  Footer
