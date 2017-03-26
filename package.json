@@ -4,8 +4,9 @@
   "scripts": {
     "start": "node index.js --watch --serve",
     "production": "node index.js --watch --serve --prod",
-    "build": "node index.js",
-    "deploy": "node index.js --deploy"
+    "build": "node index.js --prod",
+    "deploy": "node index.js --prod --deploy",
+    "optiImages": "node node_modules/optipng-bin/cli.js -o7 assets/img/*.png assets/img/teams/*.png"
   },
   "dependencies": {
     "handlebars": "^4.0.5",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "ncp": "^2.0.0",
+    "optipng-bin": "^3.1.2",
     "rimraf": "^2.6.1",
     "yargs": "^7.0.2"
   }
