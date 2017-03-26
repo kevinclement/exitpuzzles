@@ -22,14 +22,13 @@ $(function() {
     }
 
     var teamIndex = 0;
-    // TMP: MOVE TO index use plugin to export to here -----------------
     var teams = [
         { url: "assets/img/teams/olympia-escape-room-11.png", title: "SUCCESS", comment: "Victory" },
-        { url: "assets/img/teams/olympia-escape-room-10.png", title: "FAILED",  comment: "Nice try" },        
+        { url: "assets/img/teams/olympia-escape-room-10.png", title: "FAILED",  comment: "Nice try" },
         { url: "assets/img/teams/olympia-escape-room-4.png",  title: "SUCCESS", comment: "Fun times" },
         { url: "assets/img/teams/olympia-escape-room-3.png",  title: "SUCCESS", comment: "Piece of cake" },
         { url: "assets/img/teams/olympia-escape-room-1.png",  title: "",        comment: "Way fun" },
-        { url: "assets/img/teams/olympia-escape-room-2.png",  title: "SUCCESS", comment: "Well done" },        
+        { url: "assets/img/teams/olympia-escape-room-2.png",  title: "SUCCESS", comment: "Well done" },
         { url: "assets/img/teams/olympia-escape-room-5.png",  title: "FAILED",  comment: "Close" },
         { url: "assets/img/teams/olympia-escape-room-6.png",  title: "SUCCESS", comment: "" },
         { url: "assets/img/teams/olympia-escape-room-7.png",  title: "FAILED",  comment: "Almost" },
@@ -46,8 +45,6 @@ $(function() {
         { url: "assets/img/teams/olympia-escape-room-20.png", title: "SUCCESS", comment: "Well done" },
         { url: "assets/img/teams/olympia-escape-room-21.png", title: "FAILED",  comment: "" },
     ];
-    // -----------------------------------------------------------------
-    
 
     /*---------------------------------------*/
     /*  Adds a row of team photos
