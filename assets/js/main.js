@@ -1,4 +1,16 @@
 $(function() {
+    var $iso;
+    var imageLoadQueue = [];
+
+    // monkey patch in callback for image
+    document.imageLoaded = function() {
+
+        // triggger isotop layout now that an image has been loaded
+        $iso.isotope('layout');
+
+        // load next image if we still have one in the queue
+        addTeam();
+    }
 
     var teamIndex = 0;
     // TMP: MOVE TO index use plugin to export to here -----------------
@@ -27,12 +39,34 @@ $(function() {
     ];
     // -----------------------------------------------------------------
     
+
+    /*---------------------------------------*/
+    /*  Adds a row of team photos
+    /*---------------------------------------*/
+    function AddRowOfTeams() {
+
+        // add 3 at a time, if available
+        for (var i=0; i < 3; i++) {
+            imageLoadQueue.push(teamIndex++);
+
+            // stop the loop and remove 'add more' button
+            if (teamIndex === teams.length) {
+                $('#moreTeams').remove();
+                continue;
+            }
+        }
+
+        // add the first image to the page and trigger its image download
+        addTeam();
+    }
+
     /*---------------------------------------*/
     /*  Add a single team photo
     /*---------------------------------------*/
-    function addTeam(iso, i) {
+    function addTeam() {
+        if (imageLoadQueue.length == 0) { return; }
 
-        var team = teams[i];
+        var team = teams[imageLoadQueue.pop()];
         var html = '<div class="portfolio-item teamPhoto grow">              ' +
         '   <div class="inner-content">                                      ' +
         '       <div class="portfolio-content">                              ' +
@@ -45,36 +79,18 @@ $(function() {
         '               </a>                                                 ' +
         '           </div>                                                   ' +
         '       </div>                                                       ' +
-        '       <img src="' + team.url + '" alt="" class="img-responsive"/>  ' +
+        '       <img src="' + team.url + '"                                  ' +
+        '            onload="imageLoaded()" class="img-responsive"/>         ' +
         '       </div>                                                       ' +
         '  </div>                                                            ';
 
         var teamHtml = $(html);
         teamHtml.appendTo($('#teamPlaceholder'));
-        iso.appended(teamHtml);
-    }
 
-    /*---------------------------------------*/
-    /*  Adds a row of team photos
-    /*---------------------------------------*/
-    function AddRowOfTeams() {
-        var iso = $('.popup-portfolio').data().isotope;
-        
-        // add 3 at a time, if available
-        for (var i=0; i < 3; i++) {
-            addTeam(iso, teamIndex++);
-
-            // stop the loop and remove 'add more' button
-            if (teamIndex === teams.length) {
-                $('#moreTeams').remove();
-                continue;
-            }
-        }
-
-        // redo layout has be be done in set timeout so that iso library can catchup (lame)
-        window.setTimeout(function() {
-            iso.layout();    
-        }, 50);
+        // will add it to the isotop, but won't trigger layout until image is loaded
+        $iso.isotope()
+            .append(teamHtml)
+            .isotope('appended', teamHtml);
     }
 
     /*---------------------------------------*/
@@ -83,7 +99,7 @@ $(function() {
     $(window).load(function(){
 
         // init isotope to move photos around
-        $('.popup-portfolio').isotope({ 
+        $iso = $('.popup-portfolio').isotope({ 
             filter: '*', 
             animationOptions: { 
                 duration: 750, 
@@ -95,7 +111,7 @@ $(function() {
                 isResizable: true,
                 gutter: 15
             }
-        }); 
+        });
 
         // hookup pop-up for images
         $('.popup-portfolio').magnificPopup({
