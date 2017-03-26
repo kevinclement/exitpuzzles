@@ -83,8 +83,8 @@ $(function() {
         '       </div>                                                       ' +
         '       <img src="' + team.url + '"                                  ' +
         '            onload="imageLoaded()" class="img-responsive"/>         ' +
-        '       </div>                                                       ' +
-        '  </div>                                                            ';
+        '   </div>                                                           ' +
+        '</div>                                                              ';
 
         var teamHtml = $(html);
         teamHtml.appendTo($('#teamPlaceholder'));
