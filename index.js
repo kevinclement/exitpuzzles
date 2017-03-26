@@ -92,10 +92,6 @@ function assets(ms, options) {
   ms.use(msAssets({
     source: './assets/img',
     destination: './assets/img'
-  }))
-  .use(msAssets({
-    source: './assets/plugins/font-awesome/fonts',
-    destination: './assets/fonts'
   }));
 }
 
@@ -122,7 +118,6 @@ function bundle(ms, options) {
     .use(msConcat({
       files: [
         "plugins/bootstrap/css/bootstrap.css",
-        "plugins/font-awesome/css/font-awesome-custom.css",
         "plugins/animate-css/animate.css",
         "plugins/owl-carousel/owl.carousel.css",
         "plugins/owl-carousel/owl.theme.css",
@@ -170,7 +165,7 @@ function minify(ms, options) {
 
 function minify_html(ms, options) {
   if (!options.production) { return; }
-  
+
   ms.use(msHtmlMinifier());
 }
 
