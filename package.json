@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "node index.js --watch --serve",
+    "production": "node index.js --watch --serve --prod",
     "build": "node index.js",
     "deploy": "node index.js --deploy"
   },

@@ -18,6 +18,7 @@ var argv           = require('yargs').argv;
 // get watch and serve config from command line (--watch, --serve)
 var opt = {
   build: true,
+  production: argv.prod,
   watch: argv.watch,
   serve: argv.serve,
   deploy: argv.deploy,
@@ -158,6 +159,7 @@ function bundle(ms, options) {
 /*  Minification
 /*---------------------------------------------------------------------*/
 function minify(ms, options) {
+  if (!options.production) { return; }
 
   // setup uglify for javascript
   ms.use(msUglify());
@@ -167,6 +169,8 @@ function minify(ms, options) {
 }
 
 function minify_html(ms, options) {
+  if (!options.production) { return; }
+  
   ms.use(msHtmlMinifier());
 }
 
