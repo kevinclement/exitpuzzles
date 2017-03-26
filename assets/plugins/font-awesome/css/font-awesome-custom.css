@@ -18,9 +18,6 @@
   -moz-osx-font-smoothing: grayscale;
   transform: translate(0, 0);
 }
-.fa-instagram:before {
-  content: "\f16d";
-}
 .fa-phone:before {
   content: "\f095";
 }
@@ -32,10 +29,4 @@
 }
 .fa-clock-o:before {
   content: "\f017";
-}
-.fa-facebook:before {
-  content: "\f09a";
-}
-.fa-twitter:before {
-  content: "\f099";
 }

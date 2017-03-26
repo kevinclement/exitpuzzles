@@ -108,3 +108,13 @@
 #our-latest-work > .section-inner .section-content .section-title > .section-line {
     background-color: #b7ada4;
 }
+
+/*---------------------------------------------------------------------*/
+/*  Footer
+/*---------------------------------------------------------------------*/
+.footer-icon {
+    height: 18px;
+    width: 18px;
+    margin-top:10px;
+    fill: currentColor;
+}
