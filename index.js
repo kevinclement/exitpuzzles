@@ -95,6 +95,11 @@ function assets(ms, options) {
     source: './assets/img',
     destination: './assets/img'
   }));
+
+  ms.use(msAssets({
+    source: './src/nophones',
+    destination: './nophones'
+  }));
 }
 
 /*---------------------------------------------------------------------*/
