@@ -7,7 +7,8 @@ var msAssets       = require('metalsmith-assets');
 var msConcat       = require('metalsmith-concat');
 var msFingerprint  = require('metalsmith-fingerprint');
 var msMetadata     = require('metalsmith-metadata');
-var moveRemove     = require('metalsmith-move-remove');
+var msUglify       = require('metalsmith-uglify');
+var msMoveRemove   = require('metalsmith-move-remove');
 var ncp            = require('ncp');
 var rimraf         = require('rimraf');
 var argv           = require('yargs').argv;
@@ -29,6 +30,7 @@ metadata(ms, opt);
 assets(ms, opt);
 markdown(ms, opt);
 bundle(ms, opt);
+minify(ms, opt);
 fingerprint(ms, opt);
 templates(ms, opt);
 cleanup(ms, opt);
@@ -149,6 +151,12 @@ function bundle(ms, options) {
       output: 'assets/css/app.css'
     }));
 }
+/*---------------------------------------------------------------------*/
+/*  Minification
+/*---------------------------------------------------------------------*/
+function minify(ms, options) {
+  ms.use(msUglify());
+}
 
 /*---------------------------------------------------------------------*/
 /*  Fingerprint files
@@ -156,9 +164,9 @@ function bundle(ms, options) {
 function fingerprint(ms, options) {
   ms.use(msFingerprint({
     pattern: [
-      'assets/js/vendor.js',
+      'assets/js/vendor.min.js',
       'assets/css/vendor.css',
-      'assets/js/app.js',
+      'assets/js/app.min.js',
       'assets/css/app.css'
     ]
   }))
@@ -179,13 +187,15 @@ function templates(ms, options) {
 /*  Cleanup - stuff we dont want in final directory
 /*---------------------------------------------------------------------*/
 function cleanup(ms, options) {
-  ms.use(moveRemove({
+  ms.use(msMoveRemove({
     remove: [
       'index.md',
       'layouts/*',
       'assets/css/app.css',
       'assets/js/app.js',
+      'assets/js/app.min.js',
       'assets/js/vendor.js',
+      'assets/js/vendor.min.js',
       'assets/css/vendor.css']
   }));
 }
