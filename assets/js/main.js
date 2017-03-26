@@ -48,12 +48,6 @@ $(function() {
         // add 3 at a time, if available
         for (var i=0; i < 3; i++) {
             imageLoadQueue.push(teamIndex++);
-
-            // stop the loop and remove 'add more' button
-            if (teamIndex === teams.length) {
-                $('#moreTeams').remove();
-                continue;
-            }
         }
 
         // add the first image to the page and trigger its image download
@@ -64,7 +58,15 @@ $(function() {
     /*  Add a single team photo
     /*---------------------------------------*/
     function addTeam() {
-        if (imageLoadQueue.length == 0) { return; }
+        if (imageLoadQueue.length == 0) { 
+
+            // if there are still images to potentially load, show the button again since we're done loading
+            if (teamIndex < teams.length) {
+                $('#moreTeams').show();
+            }
+
+            return; 
+        }
 
         var team = teams[imageLoadQueue.pop()];
         var html = '<div class="portfolio-item teamPhoto grow">              ' +
@@ -134,9 +136,12 @@ $(function() {
         // hookup buttons to load next teams
         $('#moreTeams').click(function(e){ 
             e.preventDefault();
-            
+
+            // hide button so during image load it doesn't overlap
+            $('#moreTeams').hide();
+
             AddRowOfTeams();
-        });        
+        });
     });
         
     /*---------------------------------------*/
