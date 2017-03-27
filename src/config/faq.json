@@ -33,6 +33,10 @@
           "text":  "You only need to bring your best wits and puzzle-solving ability. Wear anything you are comfortable in, and have your reading glasses available if needed.  You may not use your cell phone in the room."
         },
         {
+          "title": "How much?", 
+          "text":  "Tickets are $30 per person. You can check for availability by clicking <a href='//bookeo.com/exitpuzzles'>book now</a>."
+        },
+        {
           "title": "Do you do special events?", 
           "text":  "An escape room is a great way to celebrate special occasions, birthdays or corporate events. If you have a special event you want to set up, give us a call and we can customize your event to be a one of a kind memorable experience."
         }
