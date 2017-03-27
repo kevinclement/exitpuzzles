@@ -70,6 +70,10 @@ $(function() {
             if (teamIndex < teams.length) {
                 $('#moreTeams').show();
             }
+            else {
+                // fill in link to facebook to get more photos
+                $('#moreTeams')[0].parentElement.innerHTML = "<p class='morePhotos'>For even more photos check <a href='//www.facebook.com/pg/exitpuzzlesescaperoom/photos/'>facebook</a>.</p>";
+            }
 
             return;
         }

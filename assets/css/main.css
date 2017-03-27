@@ -111,6 +111,11 @@
 .hiddenPhoto {
     display:none;
 }
+.morePhotos {
+    text-transform: none;
+    font-size: 22px;
+    margin-top: 25px;
+}
 
 /*---------------------------------------------------------------------*/
 /*  Footer
