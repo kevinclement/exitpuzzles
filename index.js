@@ -12,6 +12,7 @@ var msCleanCSS     = require('metalsmith-clean-css');
 var msHtmlMinifier = require("metalsmith-html-minifier");
 var msMoveRemove   = require('metalsmith-move-remove');
 var msGA           = require('metalsmith-google-analytics').default;
+var msRedirect     = require('metalsmith-redirect');
 var ncp            = require('ncp');
 var rimraf         = require('rimraf');
 var argv           = require('yargs').argv;
@@ -33,6 +34,7 @@ var ms = Metalsmith(__dirname);
 metadata(ms, opt);
 assets(ms, opt);
 markdown(ms, opt);
+redirects(ms, opt);
 bundle(ms, opt);
 minify(ms, opt);
 fingerprint(ms, opt);
@@ -85,6 +87,15 @@ function metadata(ms, options) {
 /*---------------------------------------------------------------------*/
 function markdown(ms, options) {
   ms.use(msMarkdown());
+}
+
+/*---------------------------------------------------------------------*/
+/*  Redirects
+/*---------------------------------------------------------------------*/
+function redirects(ms, options) {
+  ms.use(msRedirect({
+    '/review': 'https://www.google.com/search?q=Exit+Puzzles+Escape+Room,+109+State+Ave+NE,+Olympia,+WA+98501&ludocid=11310057705896057084#lrd=0x5491751be5f5f8df:0x9cf5658f6d1a98fc,3'
+  }))
 }
 
 /*---------------------------------------------------------------------*/
@@ -244,7 +255,7 @@ function watch(ms, options) {
 /*---------------------------------------------------------------------*/
 function serve(ms, options) {
   if (options.serve) {
-    ms.use(msExpress());
+    ms.use(msExpress({ port: 3333 }));
   }
 }
 
