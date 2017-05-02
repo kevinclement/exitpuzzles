@@ -496,22 +496,22 @@ span.navbar-trigger-close a:hover {
     padding-bottom: 0px;
   }
 }
-#who-we-are .who-we-are-text {
+.who-we-are-text {
   text-align: center;
 }
 @media (min-width: 1024px) {
-  #who-we-are .who-we-are-text {
+  .who-we-are-text {
     text-align: left;
   }
 }
-#who-we-are .who-we-are-text > h4 {
+.who-we-are-text > h4 {
   font-size: 25px;
   text-transform: uppercase;
 }
-#who-we-are .who-we-are-text > p {
+.who-we-are-text > p {
   font-size: 18px;
 }
-#who-we-are .who-we-are-text > .page-scroll {
+.who-we-are-text > .page-scroll {
   padding-top: 10px;
 }
 
