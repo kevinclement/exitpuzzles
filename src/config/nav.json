@@ -4,6 +4,7 @@
       { "url": "faq",             "text": "FAQ"},
       { "url": "reviews",         "text": "REVIEWS"},
       { "url": "our-latest-work", "text": "PHOTOS"},
+      { "url": "certificates", "text": "CERTIFICATES"},
       { "url": "footer",          "text": "CONTACT"}
     ]
 }
