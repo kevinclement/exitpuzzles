@@ -11,7 +11,6 @@ var msUglify       = require('metalsmith-uglify');
 var msCleanCSS     = require('metalsmith-clean-css');
 var msHtmlMinifier = require("metalsmith-html-minifier");
 var msMoveRemove   = require('metalsmith-move-remove');
-var msGA           = require('metalsmith-google-analytics').default;
 var msRedirect     = require('metalsmith-redirect');
 var ncp            = require('ncp');
 var rimraf         = require('rimraf');
@@ -41,7 +40,6 @@ fingerprint(ms, opt);
 templates(ms, opt);
 minify_html(ms, opt);
 cleanup(ms, opt);
-analytics(ms, opt);
 watch(ms, opt);
 serve(ms, opt);
 
@@ -186,13 +184,6 @@ function minify_html(ms, options) {
   if (!options.production) { return; }
 
   ms.use(msHtmlMinifier());
-}
-
-/*---------------------------------------------------------------------*/
-/*  Analytics
-/*---------------------------------------------------------------------*/
-function analytics(ms, options) {
-  ms.use(msGA('UA-75362713-1'));
 }
 
 /*---------------------------------------------------------------------*/

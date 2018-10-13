@@ -9,27 +9,26 @@
     "optiImages": "node node_modules/optipng-bin/cli.js -o7 assets/img/*.png assets/img/teams/*.png"
   },
   "dependencies": {
-    "handlebars": "^4.0.5",
-    "metalsmith": "^2.1.0",
-    "metalsmith-assets": "^0.1.0",
-    "metalsmith-clean-css": "^5.0.1",
-    "metalsmith-concat": "^6.0.0",
-    "metalsmith-express": "^0.1.0",
-    "metalsmith-fingerprint": "^1.0.3",
-    "metalsmith-google-analytics": "0.0.1",
-    "metalsmith-html-minifier": "^2.2.0",
-    "metalsmith-layouts": "^1.4.1",
-    "metalsmith-markdown": "^0.2.1",
+    "handlebars": "4.0.5",
+    "metalsmith": "2.1.0",
+    "metalsmith-assets": "0.1.0",
+    "metalsmith-clean-css": "5.0.1",
+    "metalsmith-concat": "6.0.0",
+    "metalsmith-express": "0.1.0",
+    "metalsmith-fingerprint": "1.0.3",
+    "metalsmith-html-minifier": "2.2.0",
+    "metalsmith-layouts": "1.4.1",
+    "metalsmith-markdown": "0.2.1",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-move-remove": "0.0.1",
-    "metalsmith-redirect": "^2.1.0",
-    "metalsmith-uglify": "^1.5.1",
-    "metalsmith-watch": "^1.0.3"
+    "metalsmith-redirect": "2.1.0",
+    "metalsmith-uglify": "1.5.1",
+    "metalsmith-watch": "1.0.3"
   },
   "devDependencies": {
-    "ncp": "^2.0.0",
-    "optipng-bin": "^3.1.2",
-    "rimraf": "^2.6.1",
-    "yargs": "^7.0.2"
+    "ncp": "2.0.0",
+    "optipng-bin": "3.1.2",
+    "rimraf": "2.6.1",
+    "yargs": "7.0.2"
   }
 }
