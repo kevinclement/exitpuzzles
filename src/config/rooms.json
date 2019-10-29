@@ -1,4 +1,10 @@
 {
+    "museum": {
+        "images": [
+            { "url": "assets/img/room/museum1.jpg" }
+        ]
+    },
+
     "landlord": {
         "images": [
             { "url": "assets/img/room/room1.jpg" },

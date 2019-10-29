@@ -218,6 +218,15 @@ $(function() {
     /*---------------------------------------*/
     /*  OWL CAROUSEL
     /*---------------------------------------*/
+    $('#carousel-museum').owlCarousel({
+        autoPlay: true,
+        lazyLoad:true,
+        lazyFollow:true,
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true
+    }); 
+
     $('#carousel-who-we-are').owlCarousel({
         autoPlay: true,
         lazyLoad:true,
