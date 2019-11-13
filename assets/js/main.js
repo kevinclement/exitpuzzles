@@ -227,7 +227,7 @@ $(function() {
         singleItem: true
     }); 
 
-    $('#carousel-who-we-are').owlCarousel({
+    $('#carousel-landlord').owlCarousel({
         autoPlay: true,
         lazyLoad:true,
         lazyFollow:true,

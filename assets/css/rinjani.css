@@ -486,16 +486,38 @@ span.navbar-trigger-close a:hover {
 }
 
 /*---------------------------------------------------------------------*/
-/*  6. WHO WE ARE SECTION
+/*  6. ROOMS
 /*---------------------------------------------------------------------*/
-#who-we-are .carousel-container {
+#rooms .carousel-container {
   padding-bottom: 40px;
 }
 @media (min-width: 1024px) {
-  #who-we-are .carousel-container {
+  #rooms .carousel-container {
     padding-bottom: 0px;
   }
 }
+.rooms-text {
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .rooms-text {
+    text-align: left;
+  }
+}
+.rooms-text > h4 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.rooms-text > p {
+  font-size: 18px;
+}
+.rooms-text > .page-scroll {
+  padding-top: 10px;
+}
+
+/*---------------------------------------------------------------------*/
+/*  6. WHO WE ARE SECTION
+/*---------------------------------------------------------------------*/
 .who-we-are-text {
   text-align: center;
 }

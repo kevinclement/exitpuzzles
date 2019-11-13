@@ -9,7 +9,7 @@ $(function(){
         /*---------------------------------------*/
         /*  WHO WE ARE SECTION
         /*---------------------------------------*/
-        $('#who-we-are').find('.who-we-are-text').css('opacity', 0).one('inview', function(isInView){
+        $('#rooms').find('.rooms-text').css('opacity', 0).one('inview', function(isInView){
             if (isInView) {$(this).addClass('animated fadeInRight delayp3').css('opacity', 1);}
         });
         
