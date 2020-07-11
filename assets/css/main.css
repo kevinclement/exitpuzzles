@@ -30,6 +30,40 @@
         display:inline-block;
     }
 }
+.headerAlert {
+    color:#000;
+    background:#f89d29;
+    height:43px;
+    font-size:18px;
+    padding-top:8px;
+    text-align:center;
+}
+.headerAlert img {
+    vertical-align: top;
+    padding-top:1px
+}
+.headerAlertText {
+    padding-top:0px;
+    display: inline-block;
+}
+.alertBookNowButton {
+    margin-left:8px;
+    display: none;
+}
+@media (min-width: 420px) {
+    .alertBookNowButton {
+        display: inline;
+    }
+}
+.alertBookNowText {
+    display:inline-block;
+    border:1px solid black;
+    background:#101010;
+    border-radius:6px;
+    color:white;
+    padding-left:10px;
+    padding-right:10px;
+}
 
 /*---------------------------------------------------------------------*/
 /*  FAQ
