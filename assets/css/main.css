@@ -89,12 +89,7 @@
 }
 .alertBookNowButton {
     margin-left:8px;
-    display: none;
-}
-@media (min-width: 420px) {
-    .alertBookNowButton {
-        display: inline;
-    }
+    display: inline;
 }
 .alertBookNowText {
     display:inline-block;
