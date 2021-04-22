@@ -88,8 +88,9 @@
     display: inline-block;
 }
 .alertBookNowButton {
-    margin-left:8px;
+    
     display: inline;
+    color: #222;
 }
 .alertBookNowText {
     display:inline-block;
@@ -99,6 +100,7 @@
     color:white;
     padding-left:10px;
     padding-right:10px;
+    margin-left:5px;
 }
 
 /*---------------------------------------------------------------------*/
