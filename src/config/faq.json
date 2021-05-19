@@ -34,7 +34,7 @@
         },
         {
           "title": "How much does it cost?", 
-          "text":  "Tickets are $30 per person. For ticket times and availability click <a href='//bookeo.com/exitpuzzles'>book now</a>."
+          "text":  "Tickets are $30 per person. For ticket times and availability click <a href='/book.html'>book now</a>."
         },
         {
           "title": "Do you do special events?", 
