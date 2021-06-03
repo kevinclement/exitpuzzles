@@ -23,8 +23,8 @@ $(function() {
 
     var teamIndex = 0;
     var teams = [
-        { url: "assets/img/teams/olympia-escape-room-1.JPG",  title: "SUCCESS",  comment: "Way fun" },
-        { url: "assets/img/teams/olympia-escape-room-2.JPG",  title: "FAILED", comment: "Next time" },
+        { url: "assets/img/teams/olympia-escape-room-1.JPG",  title: "SUCCESS", comment: "Way fun" },
+        { url: "assets/img/teams/olympia-escape-room-2.JPG",  title: "FAILED",  comment: "Next time" },
         { url: "assets/img/teams/olympia-escape-room-3.JPG",  title: "SUCCESS", comment: "Piece of cake" },
         { url: "assets/img/teams/olympia-escape-room-4.JPG",  title: "SUCCESS", comment: "Fun times" },
         { url: "assets/img/teams/olympia-escape-room-5.JPG",  title: "FAILED",  comment: "Close" },
@@ -32,18 +32,18 @@ $(function() {
         { url: "assets/img/teams/olympia-escape-room-7.JPG",  title: "FAILED",  comment: "Almost" },
         { url: "assets/img/teams/olympia-escape-room-8.JPG",  title: "SUCCESS", comment: "Great effort" },
         { url: "assets/img/teams/olympia-escape-room-9.JPG",  title: "FAILED",  comment: "Maybe next time" },
-        { url: "assets/img/teams/olympia-escape-room-10.JPG", title: "SUCCESS",  comment: "" },
-        { url: "assets/img/teams/olympia-escape-room-11.JPG", title: "FAILED", comment: "Nice try" },
+        { url: "assets/img/teams/olympia-escape-room-10.JPG", title: "SUCCESS", comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-11.JPG", title: "FAILED",  comment: "Nice try" },
         { url: "assets/img/teams/olympia-escape-room-12.JPG", title: "SUCCESS", comment: "Victory" },
         { url: "assets/img/teams/olympia-escape-room-13.JPG", title: "SUCCESS", comment: "" },
         { url: "assets/img/teams/olympia-escape-room-14.JPG", title: "SUCCESS", comment: "Elementary" },
-        { url: "assets/img/teams/olympia-escape-room-15.JPG", title: "FAILED", comment: "Killer group" },
-        { url: "assets/img/teams/olympia-escape-room-16.JPG", title: "SUCCESS",  comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-15.JPG", title: "FAILED",  comment: "Killer group" },
+        { url: "assets/img/teams/olympia-escape-room-16.JPG", title: "SUCCESS", comment: "" },
         { url: "assets/img/teams/olympia-escape-room-17.JPG", title: "FAILED",  comment: "Pajama party!" },
-        { url: "assets/img/teams/olympia-escape-room-18.JPG", title: "FAILED", comment: "Great group effort" },
+        { url: "assets/img/teams/olympia-escape-room-18.JPG", title: "FAILED",  comment: "Great group effort" },
         { url: "assets/img/teams/olympia-escape-room-19.JPG", title: "FAILED",  comment: "" },
         { url: "assets/img/teams/olympia-escape-room-20.JPG", title: "SUCCESS", comment: "Nice Shirts!" },
-        { url: "assets/img/teams/olympia-escape-room-21.JPG", title: "SUCCESS",  comment: "" },
+        { url: "assets/img/teams/olympia-escape-room-21.JPG", title: "SUCCESS", comment: "" },
     ];
 
     /*---------------------------------------*/
