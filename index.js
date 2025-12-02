@@ -13,7 +13,7 @@ var msHtmlMinifier = require("metalsmith-html-minifier");
 var msMoveRemove   = require('metalsmith-move-remove');
 var msRedirect     = require('metalsmith-redirect');
 var ncp            = require('ncp');
-var rimraf         = require('rimraf');
+const { rimraf, rimrafSync, native, nativeSync } = require('rimraf')
 var argv           = require('yargs').argv;
 
 // get watch and serve config from command line (--watch, --serve)
